@@ -2,3 +2,5 @@
 logs
 target
 out
+.idea/workspace.xml
+.DS_Store
