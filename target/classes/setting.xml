@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+    <GlobalSettings>
+        <FilePath>/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv</FilePath>
+        <DeltaFilePath>/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv</DeltaFilePath>
+        <OuputFilePath>/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv</OuputFilePath>
+        <DbFilePath>/Users/Shawn/Documents/dev/GEC_Grouping/chrismas.db</DbFilePath>
+        <GroupCapacity>15</GroupCapacity>
+    </GlobalSettings>
+
+    <Roles>
+        <RoleName>组长</RoleName>
+        <RoleName>副组长</RoleName>
+        <RoleName>写报告</RoleName>
+        <RoleName>接待</RoleName>
+        <RoleName>摄影</RoleName>
+        <RoleName>娱乐</RoleName>
+        <RoleName>零食</RoleName>
+        <RoleName>后勤</RoleName>
+    </Roles>
+
+    <ColumnMaps>
+        <Column mapName="signupId">0</Column>
+        <Column mapName="englishName">6</Column>
+        <Column mapName="chineseName">7</Column>
+        <Column mapName="gender">8</Column>
+        <Column mapName="homeTown">9</Column>
+        <Column mapName="occupation">10</Column>
+        <Column mapName="language">11</Column>
+        <Column mapName="role">12</Column>
+        <Column mapName="experience">13</Column>
+        <Column mapName="wantToBeWith">15</Column>
+        <Column mapName="mobile">16</Column>
+        <Column mapName="qq">17</Column>
+        <Column mapName="wechat">18</Column>
+        <Column mapName="district">26</Column>
+    </ColumnMaps>
+</settings>

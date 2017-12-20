@@ -1,0 +1,950 @@
+2017-12-20  00:03:55.008 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  00:07:15.855 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  00:09:28.644 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  12:37:59.727 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  12:41:58.904 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  12:46:48.502 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  12:47:55.072 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  12:53:21.870 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  12:53:21.881 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  12:53:21.884 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  12:53:21.884 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  12:53:21.884 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  12:53:21.884 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  12:53:21.884 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  12:53:21.885 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  12:53:21.885 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  12:53:21.886 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  12:53:21.886 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  12:53:21.886 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  12:53:21.886 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  12:53:21.886 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  12:53:21.887 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  12:53:21.887 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  12:53:21.887 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  12:53:21.887 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  12:53:21.888 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  12:53:21.888 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  12:53:21.888 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  12:53:21.888 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  12:53:21.888 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  12:53:21.888 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  12:53:21.889 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  12:53:21.889 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  12:53:21.889 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  12:53:21.889 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  12:53:21.889 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  12:53:21.889 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  12:53:21.890 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  12:53:21.890 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  12:53:21.890 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  12:53:21.890 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  12:53:21.890 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  12:53:21.890 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  12:53:21.890 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  12:53:21.891 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  12:53:21.891 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  12:53:21.891 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  12:53:21.891 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  12:53:21.891 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  12:56:36.209 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  12:56:36.221 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  12:56:36.223 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  12:56:36.224 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  12:56:36.224 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  12:56:36.224 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  12:56:36.224 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  12:56:36.224 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  12:56:36.225 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  12:56:36.225 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  12:56:36.225 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  12:56:36.225 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  12:56:36.226 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  12:56:36.226 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  12:56:36.226 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  12:56:36.226 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  12:56:36.226 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  12:56:36.227 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  12:56:36.227 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  12:56:36.227 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  12:56:36.227 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  12:56:36.227 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  12:56:36.227 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  12:56:36.228 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  12:56:36.228 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  12:56:36.228 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  12:56:36.228 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  12:56:36.228 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  12:56:36.229 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  12:56:36.229 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  12:56:36.230 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  12:56:36.230 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  12:56:36.230 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  12:56:36.231 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  12:56:36.231 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  12:56:36.231 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  12:56:36.231 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  12:56:36.232 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  12:56:36.232 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  12:56:36.232 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  12:56:36.232 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  12:56:36.233 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  12:56:36.237 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  13:16:25.066 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  13:16:25.082 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:16:25.086 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:16:25.086 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  13:16:25.087 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  13:16:25.087 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  13:16:25.087 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  13:16:25.087 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  13:16:25.087 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  13:16:25.087 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  13:16:25.087 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  13:16:25.088 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  13:16:25.088 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  13:16:25.088 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  13:16:25.088 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  13:16:25.088 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  13:16:25.089 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  13:16:25.089 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  13:16:25.089 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  13:16:25.090 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  13:16:25.090 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  13:16:25.090 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  13:16:25.090 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  13:16:25.090 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  13:16:25.091 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  13:16:25.092 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  13:16:25.093 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  13:16:25.096 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  13:16:29.027 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : (Refresh) Read all the records from DB
+2017-12-20  13:35:06.976 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  13:35:06.992 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:35:06.997 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:35:06.998 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  13:35:06.999 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  13:35:07.000 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  13:35:07.000 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  13:35:07.001 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  13:35:07.001 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  13:35:07.002 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  13:35:07.002 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  13:35:07.002 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  13:35:07.002 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  13:35:07.002 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  13:35:07.003 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  13:35:07.003 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  13:35:07.004 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  13:35:07.004 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  13:35:07.004 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  13:35:07.005 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  13:35:07.005 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  13:35:07.005 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  13:35:07.005 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  13:35:07.005 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  13:35:07.006 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  13:35:07.006 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  13:35:07.007 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  13:35:07.007 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  13:35:07.007 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  13:35:07.008 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  13:35:07.008 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  13:35:07.008 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  13:35:07.008 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  13:35:07.008 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  13:35:07.009 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  13:35:07.009 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  13:35:07.009 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  13:35:07.009 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  13:35:07.009 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  13:35:07.010 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  13:35:07.010 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  13:35:07.010 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  13:35:07.010 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  13:35:07.018 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  13:35:08.235 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : auto-grouping
+2017-12-20  13:35:08.241 [Thread-2] INFO  com.shawn.gec.control.Processor - Grouping function begins ...
+2017-12-20  13:35:08.263 [Thread-2] INFO  com.shawn.gec.control.Processor - Loaded all the records needing grouping into memory. count:145
+2017-12-20  13:35:08.264 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-1 : refreshWannaWithWho
+2017-12-20  13:35:08.270 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-2 : correctLanguageData
+2017-12-20  13:35:08.286 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-3 : divideToCircleGroupsByWannaBeWith
+2017-12-20  13:35:08.290 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-4 : calcHowManyGroupsAndIdealCapacity
+2017-12-20  13:35:08.295 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-5 : allocateImportantRoles(TeamLeader and Vice TeamLeader)
+2017-12-20  13:35:08.333 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-6 : allocateRemainCircles
+2017-12-20  13:35:08.352 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-7 : allocateOtherRoles
+2017-12-20  13:35:08.490 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-8 : allocateRestPerson
+2017-12-20  13:35:08.626 [Thread-2] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-9 : markedAllGrouping
+2017-12-20  13:35:10.306 [Thread-2] INFO  com.shawn.gec.control.Processor - Grouping result updated to database
+2017-12-20  13:35:48.083 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  13:35:48.094 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:35:48.096 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:35:48.097 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  13:35:48.097 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  13:35:48.097 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  13:35:48.097 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  13:35:48.098 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  13:35:48.098 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  13:35:48.098 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  13:35:48.099 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  13:35:48.099 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  13:35:48.099 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  13:35:48.099 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  13:35:48.100 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  13:35:48.100 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  13:35:48.100 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  13:35:48.100 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  13:35:48.100 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  13:35:48.101 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  13:35:48.101 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  13:35:48.101 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  13:35:48.101 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  13:35:48.101 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  13:35:48.102 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  13:35:48.102 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  13:35:48.102 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  13:35:48.102 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  13:35:48.102 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  13:35:48.103 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  13:35:48.103 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  13:35:48.103 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  13:35:48.103 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  13:35:48.104 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  13:35:48.104 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  13:35:48.104 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  13:35:48.104 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  13:35:48.105 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  13:35:48.105 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  13:35:48.105 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  13:35:48.105 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  13:35:48.105 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  13:35:48.106 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  13:35:48.109 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  13:35:53.711 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : auto-grouping
+2017-12-20  13:35:53.714 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping function begins ...
+2017-12-20  13:35:53.750 [Thread-1] INFO  com.shawn.gec.control.Processor - Loaded all the records needing grouping into memory. count:145
+2017-12-20  13:35:53.750 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-1 : refreshWannaWithWho
+2017-12-20  13:35:53.755 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-2 : correctLanguageData
+2017-12-20  13:35:53.777 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-3 : divideToCircleGroupsByWannaBeWith
+2017-12-20  13:35:53.781 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-4 : calcHowManyGroupsAndIdealCapacity
+2017-12-20  13:35:53.788 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-5 : allocateImportantRoles(TeamLeader and Vice TeamLeader)
+2017-12-20  13:35:53.811 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-6 : allocateRemainCircles
+2017-12-20  13:35:53.820 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-7 : allocateOtherRoles
+2017-12-20  13:35:53.851 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-8 : allocateRestPerson
+2017-12-20  13:35:53.877 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-9 : markedAllGrouping
+2017-12-20  13:35:55.277 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping result updated to database
+2017-12-20  13:46:16.658 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  13:46:16.672 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:46:16.674 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  13:46:16.675 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  13:46:16.675 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  13:46:16.675 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  13:46:16.676 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  13:46:16.677 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  13:46:16.677 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  13:46:16.677 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  13:46:16.678 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  13:46:16.678 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  13:46:16.678 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  13:46:16.678 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  13:46:16.678 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  13:46:16.678 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  13:46:16.678 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  13:46:16.679 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  13:46:16.679 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  13:46:16.679 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  13:46:16.679 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  13:46:16.679 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  13:46:16.680 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  13:46:16.684 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  13:46:16.684 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  13:46:16.684 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  13:46:16.684 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  13:46:16.684 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  13:46:16.685 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  13:46:16.685 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  13:46:16.685 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  13:46:16.685 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  13:46:16.685 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  13:46:16.685 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  13:46:16.686 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  13:46:16.686 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  13:46:16.686 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  13:46:16.688 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  13:46:16.688 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  13:46:16.689 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  13:46:16.689 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  13:46:16.689 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  13:46:16.690 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  13:46:16.696 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  13:46:21.870 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : auto-grouping
+2017-12-20  13:46:21.882 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping function begins ...
+2017-12-20  13:46:21.916 [Thread-1] INFO  com.shawn.gec.control.Processor - Loaded all the records needing grouping into memory. count:145
+2017-12-20  13:46:21.916 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-1 : refreshWannaWithWho
+2017-12-20  13:46:21.916 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:14 name:Rebecca) wants to be with (UID:65 name:Amyluo)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:20 name:Sherry) wants to be with (UID:14 name:Rebecca)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:30 name:LEO) wants to be with (UID:31 name:Sayoko)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:31 name:Sayoko) wants to be with (UID:30 name:LEO)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:34 name:Bird) wants to be with (UID:28 name:paula)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:35 name:Miranda) wants to be with (UID:65 name:Amyluo)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:39 name:Tiffany) wants to be with (UID:51 name:Xia)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:50 name:Jason) wants to be with (UID:6 name:Allen)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:51 name:Xia) wants to be with (UID:39 name:Tiffany)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match failed; person (UID:62, name:海棠) wants to be with 13535214029
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:63 name:小黑) wants to be with (UID:62 name:海棠)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:65 name:Amyluo) wants to be with (UID:14 name:Rebecca)
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match failed; person (UID:68, name:Lide) wants to be with 18802061135
+2017-12-20  13:46:21.917 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:74 name:greensix) wants to be with (UID:70 name:Minnie)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:75 name:Evelyn) wants to be with (UID:65 name:Amyluo)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match failed; person (UID:78, name:Greyson) wants to be with Ron
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:79 name:samya) wants to be with (UID:76 name:Lyia)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:80 name:Joy) wants to be with (UID:81 name:Aimee)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:81 name:Aimee) wants to be with (UID:80 name:Joy)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:93 name:Ice) wants to be with (UID:92 name:Gary)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:94 name:Roy) wants to be with (UID:96 name:xiaolu)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:95 name:Tannin) wants to be with (UID:82 name:Angel Wang)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:96 name:xiaolu) wants to be with (UID:94 name:Roy)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:97 name:Ling) wants to be with (UID:98 name:Demi)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:98 name:Demi) wants to be with (UID:97 name:Ling)
+2017-12-20  13:46:21.918 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:100 name:Daisy) wants to be with (UID:14 name:Rebecca)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:101 name:阿慧) wants to be with (UID:19 name:MandyTmy)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match failed; person (UID:108, name:yiyu) wants to be with 13430228911
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:122 name:SUKI) wants to be with (UID:123 name:Tina)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:123 name:Tina) wants to be with (UID:122 name:SUKI)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:129 name:Faith) wants to be with (UID:105 name:Paul)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match failed; person (UID:132, name:Lester) wants to be with 13168661172
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match failed; person (UID:133, name:Ellil（伊利）) wants to be with 15220038645
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:134 name:RingRing) wants to be with (UID:133 name:Ellil（伊利）)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:135 name:小莉) wants to be with (UID:138 name:Ken)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:138 name:Ken) wants to be with (UID:135 name:小莉)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match failed; person (UID:142, name:jackma) wants to be with 美女
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:147 name:jess) wants to be with (UID:141 name:Jason)
+2017-12-20  13:46:21.919 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-2 : correctLanguageData
+2017-12-20  13:46:21.931 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-3 : divideToCircleGroupsByWannaBeWith
+2017-12-20  13:46:21.934 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-4 : calcHowManyGroupsAndIdealCapacity
+2017-12-20  13:46:21.940 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-5 : allocateImportantRoles(TeamLeader and Vice TeamLeader)
+2017-12-20  13:46:21.966 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-6 : allocateRemainCircles
+2017-12-20  13:46:21.975 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-7 : allocateOtherRoles
+2017-12-20  13:46:22.009 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-8 : allocateRestPerson
+2017-12-20  13:46:22.033 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-9 : markedAllGrouping
+2017-12-20  13:46:23.524 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping result updated to database
+2017-12-20  19:14:10.235 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  19:14:10.249 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  19:14:10.252 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  19:14:10.252 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  19:14:10.252 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  19:14:10.253 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  19:14:10.253 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  19:14:10.253 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  19:14:10.254 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  19:14:10.254 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  19:14:10.254 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  19:14:10.255 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  19:14:10.255 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  19:14:10.255 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  19:14:10.255 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  19:14:10.256 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  19:14:10.256 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  19:14:10.256 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  19:14:10.256 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  19:14:10.256 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  19:14:10.257 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  19:14:10.257 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  19:14:10.257 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  19:14:10.257 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  19:14:10.258 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  19:14:10.258 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  19:14:10.258 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  19:14:10.258 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  19:14:10.259 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  19:14:10.259 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  19:14:10.259 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  19:14:10.259 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  19:14:10.259 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  19:14:10.259 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  19:14:10.260 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  19:14:10.260 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  19:14:10.264 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  19:14:10.265 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  19:14:10.265 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  19:14:10.266 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  19:14:10.266 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  19:14:10.266 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  19:14:10.266 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  19:14:10.273 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  19:14:17.304 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : auto-grouping
+2017-12-20  19:14:17.316 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping function begins ...
+2017-12-20  19:14:17.367 [Thread-1] INFO  com.shawn.gec.control.Processor - Loaded all the records needing grouping into memory. count:145
+2017-12-20  19:14:17.367 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-1 : refreshWannaWithWho
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:14 name:Rebecca) wants to be with (UID:65 name:Amyluo)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:20 name:Sherry) wants to be with (UID:14 name:Rebecca)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:30 name:LEO) wants to be with (UID:31 name:Sayoko)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:31 name:Sayoko) wants to be with (UID:30 name:LEO)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:34 name:Bird) wants to be with (UID:28 name:paula)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:35 name:Miranda) wants to be with (UID:65 name:Amyluo)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:39 name:Tiffany) wants to be with (UID:51 name:Xia)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:50 name:Jason) wants to be with (UID:6 name:Allen)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:51 name:Xia) wants to be with (UID:39 name:Tiffany)
+2017-12-20  19:14:17.368 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:62, name:海棠) wants to be with 13535214029
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:63 name:小黑) wants to be with (UID:62 name:海棠)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:65 name:Amyluo) wants to be with (UID:14 name:Rebecca)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:68, name:Lide) wants to be with 18802061135
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:74 name:greensix) wants to be with (UID:70 name:Minnie)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:75 name:Evelyn) wants to be with (UID:65 name:Amyluo)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:78, name:Greyson) wants to be with Ron
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:79 name:samya) wants to be with (UID:76 name:Lyia)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:80 name:Joy) wants to be with (UID:81 name:Aimee)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:81 name:Aimee) wants to be with (UID:80 name:Joy)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:93 name:Ice) wants to be with (UID:92 name:Gary)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:94 name:Roy) wants to be with (UID:96 name:xiaolu)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:95 name:Tannin) wants to be with (UID:82 name:Angel Wang)
+2017-12-20  19:14:17.369 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:96 name:xiaolu) wants to be with (UID:94 name:Roy)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:97 name:Ling) wants to be with (UID:98 name:Demi)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:98 name:Demi) wants to be with (UID:97 name:Ling)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:100 name:Daisy) wants to be with (UID:14 name:Rebecca)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:101 name:阿慧) wants to be with (UID:19 name:MandyTmy)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:108, name:yiyu) wants to be with 13430228911
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:122 name:SUKI) wants to be with (UID:123 name:Tina)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:123 name:Tina) wants to be with (UID:122 name:SUKI)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:129 name:Faith) wants to be with (UID:105 name:Paul)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:132, name:Lester) wants to be with 13168661172
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:133, name:Ellil（伊利）) wants to be with 15220038645
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:134 name:RingRing) wants to be with (UID:133 name:Ellil（伊利）)
+2017-12-20  19:14:17.370 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:135 name:小莉) wants to be with (UID:138 name:Ken)
+2017-12-20  19:14:17.371 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:138 name:Ken) wants to be with (UID:135 name:小莉)
+2017-12-20  19:14:17.371 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:142, name:jackma) wants to be with 美女
+2017-12-20  19:14:17.371 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:147 name:jess) wants to be with (UID:141 name:Jason)
+2017-12-20  19:14:17.371 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-2 : correctLanguageData
+2017-12-20  19:14:17.390 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:20, name:Sherry) to follow ancestor's language, changed from 不去的 to 国语(Mandarine)
+2017-12-20  19:14:17.390 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:35, name:Miranda) to follow ancestor's language, changed from 英语(English) to 国语(Mandarine)
+2017-12-20  19:14:17.391 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:97, name:Ling) to follow ancestor's language, changed from 粤语(Cantonese) to 其他(Others)
+2017-12-20  19:14:17.391 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:100, name:Daisy) to follow ancestor's language, changed from 粤语(Cantonese) to 国语(Mandarine)
+2017-12-20  19:14:17.392 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:101, name:阿慧) to follow ancestor's language, changed from 粤语(Cantonese) to 英语(English)
+2017-12-20  19:14:17.392 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:122, name:SUKI) to follow ancestor's language, changed from 英语(English) to 国语(Mandarine)
+2017-12-20  19:14:17.392 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:135, name:小莉) to follow ancestor's language, changed from 其他(Others) to 国语(Mandarine)
+2017-12-20  19:14:17.392 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:147, name:jess) to follow ancestor's language, changed from 国语(Mandarine) to 英语(English)
+2017-12-20  19:14:17.393 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-3 : divideToCircleGroupsByWannaBeWith
+2017-12-20  19:14:17.401 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:6, nameAllen} has children : {}
+2017-12-20  19:14:17.401 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:14, nameRebecca} has children : {}
+2017-12-20  19:14:17.402 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:19, nameMandyTmy} has children : {}
+2017-12-20  19:14:17.402 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:28, namepaula} has children : {}
+2017-12-20  19:14:17.402 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:31, nameSayoko} has children : {}
+2017-12-20  19:14:17.403 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:51, nameXia} has children : {}
+2017-12-20  19:14:17.403 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:62, name海棠} has children : {}
+2017-12-20  19:14:17.403 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:65, nameAmyluo} has children : {}
+2017-12-20  19:14:17.404 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:70, nameMinnie} has children : {}
+2017-12-20  19:14:17.404 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:76, nameLyia} has children : {}
+2017-12-20  19:14:17.404 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:81, nameAimee} has children : {}
+2017-12-20  19:14:17.404 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:82, nameAngel Wang} has children : {}
+2017-12-20  19:14:17.404 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:92, nameGary} has children : {}
+2017-12-20  19:14:17.405 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:96, namexiaolu} has children : {}
+2017-12-20  19:14:17.405 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:98, nameDemi} has children : {}
+2017-12-20  19:14:17.405 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:105, namePaul} has children : {}
+2017-12-20  19:14:17.405 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:123, nameTina} has children : {}
+2017-12-20  19:14:17.405 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:133, nameEllil（伊利）} has children : {}
+2017-12-20  19:14:17.405 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:138, nameKen} has children : {}
+2017-12-20  19:14:17.406 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:141, nameJason} has children : {}
+2017-12-20  19:14:17.406 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-4 : calcHowManyGroupsAndIdealCapacity
+2017-12-20  19:14:17.413 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-5 : allocateImportantRoles(TeamLeader and Vice TeamLeader)
+2017-12-20  19:14:17.449 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-6 : allocateRemainCircles
+2017-12-20  19:14:17.460 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-7 : allocateOtherRoles
+2017-12-20  19:14:17.493 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-8 : allocateRestPerson
+2017-12-20  19:14:17.897 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-9 : markedAllGrouping
+2017-12-20  19:14:19.490 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping result updated to database
+2017-12-20  19:16:02.036 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  19:16:02.058 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  19:16:02.061 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  19:16:02.061 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  19:16:02.062 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  19:16:02.062 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  19:16:02.062 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  19:16:02.063 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  19:16:02.063 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  19:16:02.063 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  19:16:02.063 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  19:16:02.063 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  19:16:02.065 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  19:16:02.066 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  19:16:02.066 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  19:16:02.066 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  19:16:02.067 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  19:16:02.067 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  19:16:02.067 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  19:16:02.068 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  19:16:02.068 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  19:16:02.068 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  19:16:02.068 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  19:16:02.068 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  19:16:02.069 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  19:16:02.070 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  19:16:02.071 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  19:16:02.071 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  19:16:02.071 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  19:16:02.071 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  19:16:02.072 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  19:16:02.072 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  19:16:02.072 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  19:16:02.072 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  19:16:02.073 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  19:16:02.073 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  19:16:02.073 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  19:16:02.073 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  19:16:02.074 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  19:16:02.074 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  19:16:02.075 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  19:16:02.075 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  19:16:02.075 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  19:16:02.080 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  19:16:06.242 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : auto-grouping
+2017-12-20  19:16:06.255 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping function begins ...
+2017-12-20  19:16:06.299 [Thread-1] INFO  com.shawn.gec.control.Processor - Loaded all the records needing grouping into memory. count:145
+2017-12-20  19:16:06.300 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-1 : refreshWannaWithWho
+2017-12-20  19:16:06.301 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:14 name:Rebecca) wants to be with (UID:65 name:Amyluo)
+2017-12-20  19:16:06.301 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:20 name:Sherry) wants to be with (UID:14 name:Rebecca)
+2017-12-20  19:16:06.301 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:30 name:LEO) wants to be with (UID:31 name:Sayoko)
+2017-12-20  19:16:06.301 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:31 name:Sayoko) wants to be with (UID:30 name:LEO)
+2017-12-20  19:16:06.301 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:34 name:Bird) wants to be with (UID:28 name:paula)
+2017-12-20  19:16:06.302 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:35 name:Miranda) wants to be with (UID:65 name:Amyluo)
+2017-12-20  19:16:06.302 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:39 name:Tiffany) wants to be with (UID:51 name:Xia)
+2017-12-20  19:16:06.302 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:50 name:Jason) wants to be with (UID:6 name:Allen)
+2017-12-20  19:16:06.302 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:51 name:Xia) wants to be with (UID:39 name:Tiffany)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:62, name:海棠) wants to be with 13535214029
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:63 name:小黑) wants to be with (UID:62 name:海棠)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:65 name:Amyluo) wants to be with (UID:14 name:Rebecca)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:68, name:Lide) wants to be with 18802061135
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:74 name:greensix) wants to be with (UID:70 name:Minnie)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:75 name:Evelyn) wants to be with (UID:65 name:Amyluo)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:78, name:Greyson) wants to be with Ron
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:79 name:samya) wants to be with (UID:76 name:Lyia)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:80 name:Joy) wants to be with (UID:81 name:Aimee)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:81 name:Aimee) wants to be with (UID:80 name:Joy)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:93 name:Ice) wants to be with (UID:92 name:Gary)
+2017-12-20  19:16:06.303 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:94 name:Roy) wants to be with (UID:96 name:xiaolu)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:95 name:Tannin) wants to be with (UID:82 name:Angel Wang)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:96 name:xiaolu) wants to be with (UID:94 name:Roy)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:97 name:Ling) wants to be with (UID:98 name:Demi)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:98 name:Demi) wants to be with (UID:97 name:Ling)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:100 name:Daisy) wants to be with (UID:14 name:Rebecca)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:101 name:阿慧) wants to be with (UID:19 name:MandyTmy)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:108, name:yiyu) wants to be with 13430228911
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:122 name:SUKI) wants to be with (UID:123 name:Tina)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:123 name:Tina) wants to be with (UID:122 name:SUKI)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:129 name:Faith) wants to be with (UID:105 name:Paul)
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:132, name:Lester) wants to be with 13168661172
+2017-12-20  19:16:06.304 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:133, name:Ellil（伊利）) wants to be with 15220038645
+2017-12-20  19:16:06.305 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:134 name:RingRing) wants to be with (UID:133 name:Ellil（伊利）)
+2017-12-20  19:16:06.305 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:135 name:小莉) wants to be with (UID:138 name:Ken)
+2017-12-20  19:16:06.305 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:138 name:Ken) wants to be with (UID:135 name:小莉)
+2017-12-20  19:16:06.305 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match FAILED;  (UID:142, name:jackma) wants to be with 美女
+2017-12-20  19:16:06.305 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Match succeeded. (UID:147 name:jess) wants to be with (UID:141 name:Jason)
+2017-12-20  19:16:06.305 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-2 : correctLanguageData
+2017-12-20  19:16:06.319 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:20, name:Sherry) to follow ancestor's language, changed from 不去的 to 国语(Mandarine)
+2017-12-20  19:16:06.319 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:35, name:Miranda) to follow ancestor's language, changed from 英语(English) to 国语(Mandarine)
+2017-12-20  19:16:06.319 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:97, name:Ling) to follow ancestor's language, changed from 粤语(Cantonese) to 其他(Others)
+2017-12-20  19:16:06.320 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:100, name:Daisy) to follow ancestor's language, changed from 粤语(Cantonese) to 国语(Mandarine)
+2017-12-20  19:16:06.320 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:101, name:阿慧) to follow ancestor's language, changed from 粤语(Cantonese) to 英语(English)
+2017-12-20  19:16:06.320 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:122, name:SUKI) to follow ancestor's language, changed from 英语(English) to 国语(Mandarine)
+2017-12-20  19:16:06.320 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:135, name:小莉) to follow ancestor's language, changed from 其他(Others) to 国语(Mandarine)
+2017-12-20  19:16:06.320 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Language changed : (UID:147, name:jess) to follow ancestor's language, changed from 国语(Mandarine) to 英语(English)
+2017-12-20  19:16:06.321 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-3 : divideToCircleGroupsByWannaBeWith
+2017-12-20  19:16:06.324 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:6, nameAllen} has children : {UID:50, name:Jason},
+2017-12-20  19:16:06.324 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:14, nameRebecca} has children : {UID:20, name:Sherry},{UID:100, name:Daisy},
+2017-12-20  19:16:06.324 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:19, nameMandyTmy} has children : {UID:101, name:阿慧},
+2017-12-20  19:16:06.325 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:28, namepaula} has children : {UID:34, name:Bird},
+2017-12-20  19:16:06.325 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:31, nameSayoko} has children : {UID:30, name:LEO},
+2017-12-20  19:16:06.325 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:51, nameXia} has children : {UID:39, name:Tiffany},
+2017-12-20  19:16:06.325 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:62, name海棠} has children : {UID:63, name:小黑},
+2017-12-20  19:16:06.325 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:65, nameAmyluo} has children : {UID:35, name:Miranda},{UID:75, name:Evelyn},
+2017-12-20  19:16:06.325 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:70, nameMinnie} has children : {UID:74, name:greensix},
+2017-12-20  19:16:06.326 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:76, nameLyia} has children : {UID:79, name:samya},
+2017-12-20  19:16:06.326 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:81, nameAimee} has children : {UID:80, name:Joy},
+2017-12-20  19:16:06.326 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:82, nameAngel Wang} has children : {UID:95, name:Tannin},
+2017-12-20  19:16:06.326 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:92, nameGary} has children : {UID:93, name:Ice},
+2017-12-20  19:16:06.326 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:96, namexiaolu} has children : {UID:94, name:Roy},
+2017-12-20  19:16:06.326 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:98, nameDemi} has children : {UID:97, name:Ling},
+2017-12-20  19:16:06.327 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:105, namePaul} has children : {UID:129, name:Faith},
+2017-12-20  19:16:06.327 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:123, nameTina} has children : {UID:122, name:SUKI},
+2017-12-20  19:16:06.327 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:133, nameEllil（伊利）} has children : {UID:134, name:RingRing},
+2017-12-20  19:16:06.327 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:138, nameKen} has children : {UID:135, name:小莉},
+2017-12-20  19:16:06.328 [Thread-1] INFO  com.shawn.gec.control.MemGrouping - Circle ancestor {UID:141, nameJason} has children : {UID:147, name:jess},
+2017-12-20  19:16:06.328 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-4 : calcHowManyGroupsAndIdealCapacity
+2017-12-20  19:16:06.334 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-5 : allocateImportantRoles(TeamLeader and Vice TeamLeader)
+2017-12-20  19:16:06.363 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-6 : allocateRemainCircles
+2017-12-20  19:16:06.373 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-7 : allocateOtherRoles
+2017-12-20  19:16:06.403 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-8 : allocateRestPerson
+2017-12-20  19:16:06.434 [Thread-1] INFO  com.shawn.gec.control.Processor - GROUPING-STEP-9 : markedAllGrouping
+2017-12-20  19:16:07.769 [Thread-1] INFO  com.shawn.gec.control.Processor - Grouping result updated to database
+2017-12-20  19:55:12.519 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  19:55:12.540 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  19:55:12.542 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  19:55:12.543 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  19:55:12.543 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db
+2017-12-20  19:55:12.543 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  19:55:12.543 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  19:55:12.544 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  19:55:12.544 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  19:55:12.544 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  19:55:12.544 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  19:55:12.545 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  19:55:12.545 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  19:55:12.545 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  19:55:12.546 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  19:55:12.546 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  19:55:12.546 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  19:55:12.546 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  19:55:12.546 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  19:55:12.546 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  19:55:12.547 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  19:55:12.547 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  19:55:12.547 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  19:55:12.547 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  19:55:12.548 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  19:55:12.548 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  19:55:12.548 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  19:55:12.548 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  19:55:12.549 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  19:55:12.549 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  19:55:12.549 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  19:55:12.549 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  19:55:12.550 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  19:55:12.550 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  19:55:12.550 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  19:55:12.550 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  19:55:12.551 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  19:55:12.551 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  19:55:12.551 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  19:55:12.551 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  19:55:12.551 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  19:55:12.551 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  19:55:12.552 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  19:55:12.565 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  19:55:28.003 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : (Refresh) Read all the records from DB
+2017-12-20  19:55:33.355 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : team management
+2017-12-20  19:55:47.787 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : team management
+2017-12-20  19:56:07.723 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : team management
+2017-12-20  20:52:23.510 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : read those remarked records
+2017-12-20  21:25:13.325 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : Modify user info. UID:142
+2017-12-20  21:26:29.453 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  21:26:29.467 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  21:26:29.469 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  21:26:29.469 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  21:26:29.469 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chrimas.db
+2017-12-20  21:26:29.469 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  21:26:29.469 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  21:26:29.470 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  21:26:29.470 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  21:26:29.470 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  21:26:29.470 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  21:26:29.470 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  21:26:29.470 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  21:26:29.470 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  21:26:29.471 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  21:26:29.471 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  21:26:29.471 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  21:26:29.471 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  21:26:29.471 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  21:26:29.472 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  21:26:29.472 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  21:26:29.472 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  21:26:29.472 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  21:26:29.472 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  21:26:29.473 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  21:26:29.473 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  21:26:29.474 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  21:26:29.474 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  21:26:29.474 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  21:26:29.474 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  21:26:29.475 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  21:26:29.475 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  21:26:29.475 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  21:26:29.476 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  21:26:29.476 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  21:26:29.476 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  21:26:29.476 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  21:26:29.476 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  21:26:29.477 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  21:26:29.477 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  21:26:29.477 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  21:26:29.477 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  21:26:29.477 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  21:26:29.481 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chrimas.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  21:26:34.558 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : (Refresh) Read all the records from DB
+2017-12-20  21:26:43.334 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : Read the records from file
+2017-12-20  21:27:25.029 [main] INFO  com.shawn.gec.ui.AppWindow - FIRST LINE OF SLF4J
+2017-12-20  21:27:25.046 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:FilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  21:27:25.048 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DeltaFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv
+2017-12-20  21:27:25.049 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:OuputFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv
+2017-12-20  21:27:25.049 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:DbFilePath Value:/Users/Shawn/Documents/dev/GEC_Grouping/chrismas.db
+2017-12-20  21:27:25.049 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:GroupCapacity Value:15
+2017-12-20  21:27:25.050 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:组长
+2017-12-20  21:27:25.050 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:副组长
+2017-12-20  21:27:25.051 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:写报告
+2017-12-20  21:27:25.052 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:接待
+2017-12-20  21:27:25.052 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:摄影
+2017-12-20  21:27:25.052 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:娱乐
+2017-12-20  21:27:25.052 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:零食
+2017-12-20  21:27:25.053 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:RoleName Value:后勤
+2017-12-20  21:27:25.053 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:signupId
+2017-12-20  21:27:25.053 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:0
+2017-12-20  21:27:25.053 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:englishName
+2017-12-20  21:27:25.054 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:6
+2017-12-20  21:27:25.054 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:chineseName
+2017-12-20  21:27:25.054 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:7
+2017-12-20  21:27:25.054 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:gender
+2017-12-20  21:27:25.054 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:8
+2017-12-20  21:27:25.054 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:homeTown
+2017-12-20  21:27:25.054 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:9
+2017-12-20  21:27:25.055 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:occupation
+2017-12-20  21:27:25.055 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:10
+2017-12-20  21:27:25.055 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:language
+2017-12-20  21:27:25.055 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:11
+2017-12-20  21:27:25.056 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:role
+2017-12-20  21:27:25.056 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:12
+2017-12-20  21:27:25.056 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:experience
+2017-12-20  21:27:25.056 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:13
+2017-12-20  21:27:25.056 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wantToBeWith
+2017-12-20  21:27:25.057 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:15
+2017-12-20  21:27:25.057 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:mobile
+2017-12-20  21:27:25.057 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:16
+2017-12-20  21:27:25.057 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:qq
+2017-12-20  21:27:25.057 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:17
+2017-12-20  21:27:25.058 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:wechat
+2017-12-20  21:27:25.058 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:18
+2017-12-20  21:27:25.058 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML attributes. QName:mapName Value:district
+2017-12-20  21:27:25.058 [main] INFO  com.shawn.gec.control.SettingCenter - Reading XML, endElement. QName:Column Value:26
+2017-12-20  21:27:25.058 [main] INFO  com.shawn.gec.ui.AppWindow - All the settings :
+2017-12-20  21:27:25.063 [main] INFO  com.shawn.gec.ui.AppWindow - SettingCenter : exlFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+exlDeltaFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv, 
+dbFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/chrismas.db, 
+exportFilePath:/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv, 
+groupCapacity:15
+Roles: 组长 副组长 写报告 接待 摄影 娱乐 零食 后勤 
+Columns: 
+COL_SIGNUP_ID - 0 
+COL_SIGNUP_DATE - 1 
+COL_ENG_NAME - 6 
+COL_CHN_NAME - 7 
+COL_GENDER - 8 
+COL_HOMETOWN - 9 
+COL_OCCUPATION - 10 
+COL_LANGUAGE - 11 
+COL_ROLE - 12 
+COL_EXPERIENCE - 13 
+COL_WANNA_BE_WITH - 15 
+COL_MOBILE_NUMBER - 16 
+COL_QQ - 17 
+COL_WECHAT - 18 
+COL_DISTRICT - 26 
+2017-12-20  21:27:29.359 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : (Refresh) Read all the records from DB
+2017-12-20  21:28:00.614 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : search key workd bh1234
+2017-12-20  21:28:03.098 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : Modify user info. UID:112
+2017-12-20  21:28:51.352 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : search key workd 15018488838
+2017-12-20  21:29:01.488 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : (Refresh) Read all the records from DB
+2017-12-20  21:29:02.648 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : search key workd 15018488838
+2017-12-20  21:29:05.881 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : Modify user info. UID:112
+2017-12-20  21:30:00.945 [AWT-EventQueue-0] INFO  com.shawn.gec.ui.AppWindow - Button clicked : read those remarked records
