@@ -56,7 +56,7 @@ public class Processor {
 
 		int addedCounter = 0;
 		for (MemGroupingItem item : items ) {
-			item.grouping.setGroupedRole(null);
+			item.grouping.setGroupedRole(null);	// null : waiting for grouping
 			
 			if (item.grouping.getIsFixed() != 1) {    // only process those unfixed
 				item.grouping.setRemark(""); // clean the grouping remark first
@@ -107,7 +107,7 @@ public class Processor {
 		while (lanIter.hasNext()) {
 			Map.Entry<String, LanguageGrouping> lanEntry = lanIter.next();
 			LanguageGrouping lanGroup = lanEntry.getValue();
-			HashMap<Integer, MemGroupingItem> grpPersons = lanGroup.groupingItems;
+			Map<Integer, MemGroupingItem> grpPersons = lanGroup.groupingItems;
 			
 			String language = lanGroup.language;
 			

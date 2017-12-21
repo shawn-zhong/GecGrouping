@@ -5,7 +5,7 @@
         <FilePath>/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv</FilePath>
         <DeltaFilePath>/Users/Shawn/Documents/dev/GEC_Grouping/chirsmas.csv</DeltaFilePath>
         <OuputFilePath>/Users/Shawn/Documents/dev/GEC_Grouping/gec_groups_done.csv</OuputFilePath>
-        <DbFilePath>/Users/Shawn/Documents/dev/GEC_Grouping/gec.db</DbFilePath>
+        <DbFilePath>/Users/Shawn/Documents/dev/GEC_Grouping/chrismas.db</DbFilePath>
         <GroupCapacity>15</GroupCapacity>
     </GlobalSettings>
 

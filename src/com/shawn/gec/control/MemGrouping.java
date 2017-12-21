@@ -1,5 +1,6 @@
 package com.shawn.gec.control;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
@@ -262,83 +263,151 @@ public class MemGrouping {
 	public void allocateImportantRoles() {
 		
 		// iterate each language group
-		Iterator<Entry<String, LanguageGrouping>> iter = _groupingResult.entrySet().iterator();
-		while (iter.hasNext()) {
-			Map.Entry<String, LanguageGrouping> entry = iter.next();
-			LanguageGrouping lanGroupSet = entry.getValue();
-			String matchLanguage = lanGroupSet.language;
-			int preferGender = -1;
-			
-			// look for teamleader
-			{
-				int[] experiencePriorities = {5,4,3,2,1}; // selecting from 5 star to 1 star experience
-				MemGroupingItem leader = Utils.lookForCompetentPerson(matchLanguage, true, experiencePriorities, Role.ROLE_TEAMLEADER_DEF, true, _dynamicGroupingSources, preferGender, true, null);
+		{
+			// look for a team leader for each group
+			for (Entry<String, LanguageGrouping> entry : _groupingResult.entrySet()) {
+
+				LanguageGrouping lanGroupSet = entry.getValue();
+				String matchLanguage = lanGroupSet.language;
+				int preferGender = -1;
+
+				logger.info("Looking for a team leader for group:{} : ", Utils.getGroupName(matchLanguage, lanGroupSet.groupId));
+
+				// Look for TeamLeader Role with experience 5,4,3 , if none, look for ViceTeamLader Role with experience 5,4,3
+				logger.info("Trying to find a team leader from experience 5 to 3 with role TeamLeader ...");
+				List<Integer> priorities = Arrays.asList(5, 4, 3);
+				List<String> acceptedRoles = Arrays.asList(Role.ROLE_TEAMLEADER_DEF);
+				MemGroupingItem leader = Utils.lookForCompetentPerson(matchLanguage, priorities, acceptedRoles, _dynamicGroupingSources, preferGender, null, false);
+
+				if (leader == null ) {
+					logger.info("Trying to find a team leader from experience 5 to 3 with role TeamLeader or ViceTeamLeader ...");
+					acceptedRoles = Arrays.asList(Role.ROLE_TEAMLEADER_DEF, Role.ROLE_VICETEAMLEADER_DEF);
+					leader = Utils.lookForCompetentPerson(matchLanguage, priorities, acceptedRoles, _dynamicGroupingSources, preferGender, null, false);
+				}
+
+				if (leader == null) {
+					logger.info("Trying to find a team leader from experience 5 to 1 with role TeamLeader or ViceTeamLeader with best effort...");
+					acceptedRoles = Arrays.asList(Role.ROLE_TEAMLEADER_DEF, Role.ROLE_VICETEAMLEADER_DEF);
+					leader = Utils.lookForCompetentPerson(matchLanguage, Arrays.asList(5, 4, 3, 2, 1), acceptedRoles, _dynamicGroupingSources, preferGender, null, true);
+				}
+
 				if (leader != null) {
+					logger.info("Found a team leader for group:{}, (UID:{}, name:{}), register role:{}, experience:{}, gender:{}",
+							Utils.getGroupName(matchLanguage, lanGroupSet.groupId), leader.person.getId(), leader.person.getEnglish_name(),
+							leader.person.getRoles(), leader.person.getExperience(), leader.person.getIs_male() == 1 ? 'M' : 'F');
 
 					leader.grouping.setGroup_id(lanGroupSet.groupId);
 					leader.grouping.setGroupedRole(new Role(Role.ROLE_TEAMLEADER_DEF));
-					
-					preferGender = (leader.person.getIs_male() == 1) ? 0 : 1;
 					lanGroupSet.groupingItems.put(leader.person.getId(), leader);
 					_dynamicGroupingSources.remove(leader.person.getId());
-					System.out.println(String.format("Find a team leader for group:%s, UID:%d, name:%s, sign-up roles:%s, experience:%d, isMale:%d", 
-							Utils.getGroupName(matchLanguage, lanGroupSet.groupId), leader.person.getId(), leader.person.getEnglish_name(), leader.person.getRoles(), leader.person.getExperience(), leader.person.getIs_male()));
 				} else {
 					// maybe not enough people to appoint one
-					System.out.println(String.format("Didnt find a group team leander for %s", Utils.getGroupName(matchLanguage, lanGroupSet.groupId)));
+					logger.info("Couldn't find a team leader for group: {}", Utils.getGroupName(matchLanguage, lanGroupSet.groupId));
 				}
 			}
-			
+
 			// make sure people in same group would be in same team
 			allocateWannaBeWithPersons();
-			
-			// look for vice teamLeader:
-			{
-				// searching in-house first
-				int[] experiencePrioritiesInhouse = {4,3,2};
-				MemGroupingItem leader = Utils.lookForCompetentPerson(matchLanguage, true, experiencePrioritiesInhouse, Role.ROLE_VICETEAMLEADER_DEF, true, lanGroupSet.groupingItems, preferGender, false, null);
-				
-				if (leader == null) {
-					
-					// find a person outside, but try to find one not adding up to exceed the group capacity
-					LinkedList<Integer> excludedIds = new LinkedList<Integer>();
-					for (int i=0; i<50; i++)	// 50 chances for try
-					{
-						int[] experiencePriorities = {4,3,2,5,1}; // selecting from 5 star to 1 star experience
-						leader = Utils.lookForCompetentPerson(matchLanguage, true, experiencePriorities, Role.ROLE_VICETEAMLEADER_DEF, true, _dynamicGroupingSources, preferGender, true, excludedIds);
-						if (leader == null) {
-							leader = Utils.lookForCompetentPerson(matchLanguage, true, experiencePriorities, Role.ROLE_VICETEAMLEADER_DEF, true, _dynamicGroupingSources, preferGender, true, null);
-							break;
-						}
-						
-						int howManyNewPpl = Utils.calculateHowManyPeopleThisPersonWith(leader.person.getId(), _dynamicCircleGroups);
+		}
+
+		// look for a vice team leader for each group
+		{
+
+			for (Entry<String, LanguageGrouping> entry : _groupingResult.entrySet()) {
+
+				LanguageGrouping lanGroupSet = entry.getValue();
+				String matchLanguage = lanGroupSet.language;
+				logger.info("Looking for a vice team leader for group:{} : ", Utils.getGroupName(matchLanguage, lanGroupSet.groupId));
+
+				// find prefer gender based on found team leader
+				int preferGender = -1;
+				MemGroupingItem teamLeader = entry.getValue().groupingItems.values().stream().filter(g -> g.grouping.getGroupedRole() != null && g.grouping.getGroupedRole().hasRole(Role.ROLE_TEAMLEADER_DEF)).findFirst().orElse(null);
+				if (teamLeader == null) {
+					logger.info("Couldn't find team Leader, ERROR");
+				} else {
+					preferGender = teamLeader.person.getIs_male() == 1 ? 0 : 1;
+				}
+
+				// search in-house first
+				logger.info("Trying to find a vice team leader in-house from experience 4,3,2,5 with role ViceTeamLeader ...");
+				List<Integer> priorities = Arrays.asList(4, 3, 2, 5);
+				List<String> acceptedRoles = Arrays.asList(Role.ROLE_VICETEAMLEADER_DEF);
+				MemGroupingItem viceLeader = Utils.lookForCompetentPerson(matchLanguage, priorities, acceptedRoles, lanGroupSet.groupingItems, preferGender, null, false);
+
+				// search in-house (TEAMLEADER role is ok for being VICE TEAM LEADER)
+				if (viceLeader == null) {
+					logger.info("Trying to find a vice team leader in-house from experience 4,3,2,5 with role ViceTeamLeader or TeamLeader ...");
+					acceptedRoles = Arrays.asList(Role.ROLE_VICETEAMLEADER_DEF, Role.ROLE_TEAMLEADER_DEF);
+					viceLeader = Utils.lookForCompetentPerson(matchLanguage, priorities, acceptedRoles, lanGroupSet.groupingItems, preferGender, null, false);
+				}
+
+				LinkedList<Integer> excludedIds = new LinkedList<Integer>();
+				for (int i = 0; i < 50; i++)    // 50 chances for try
+				{
+					// search outside
+					if (viceLeader == null) {
+						logger.info("Trying to find a vice team leader externally from experience 4,3,2,5 with role ViceTeamLeader ...");
+						priorities = Arrays.asList(4, 3, 2, 5);
+						acceptedRoles = Arrays.asList(Role.ROLE_VICETEAMLEADER_DEF);
+						viceLeader = Utils.lookForCompetentPerson(matchLanguage, priorities, acceptedRoles, _dynamicGroupingSources, preferGender, excludedIds, false);
+					}
+
+					// search outside trying best
+					if (viceLeader == null) {
+						logger.info("Trying to find a vice team leader externally from experience 4,3,2,5,1 with role ViceTeamLeader or TeamLeader with best effort...");
+						priorities = Arrays.asList(4, 3, 2, 5, 1);
+						acceptedRoles = Arrays.asList(Role.ROLE_VICETEAMLEADER_DEF, Role.ROLE_TEAMLEADER_DEF);
+						viceLeader = Utils.lookForCompetentPerson(matchLanguage, priorities, acceptedRoles, _dynamicGroupingSources, preferGender, excludedIds, true);
+					}
+
+					// found one, calculate total people
+					if (viceLeader != null) {
+						int howManyNewPpl = Utils.calculateHowManyPeopleThisPersonWith(viceLeader.person.getId(), _dynamicCircleGroups);
 						if (howManyNewPpl + lanGroupSet.groupingItems.size() > lanGroupSet.idealCapacity) {
-							excludedIds.add(leader.person.getId());
-							System.out.println("Found the vice team leader outside but exceed the limit, would try another");
-							continue;		// NOK, exceed the limit, try another one
+							excludedIds.add(viceLeader.person.getId());
+							logger.info("Found a vice team leader outside but failed to introduce into team because has too many children {UID:{}, name{}}", viceLeader.person.getId(), viceLeader.person.getEnglish_name());
+							viceLeader = null;
+							continue;
 						}
-						
-						break;	// found one
+
+						break;
 					}
-				} 
-				
-				if (leader != null) { 
-					
-					leader.grouping.setGroup_id(lanGroupSet.groupId);
-					leader.grouping.setGroupedRole(new Role(Role.ROLE_VICETEAMLEADER_DEF));
-					
-					preferGender = (leader.person.getIs_male() == 1) ? 0 : 1;
-					lanGroupSet.groupingItems.put(leader.person.getId(), leader);
-					_dynamicGroupingSources.remove(leader.person.getId());
-					System.out.println(String.format("Find a vice team leader for group:%s, UID:%d, name:%s, sign-up roles:%s, experience:%d, isMale:%d", 
-							Utils.getGroupName(matchLanguage, lanGroupSet.groupId), leader.person.getId(), leader.person.getEnglish_name(), leader.person.getRoles(), leader.person.getExperience(), leader.person.getIs_male()));
-					} else {
-						// maybe no enough ppl to appoint one
-						System.out.println(String.format("Didnt find a group vice team leander for %s", Utils.getGroupName(matchLanguage, lanGroupSet.groupId)));
-					}
+				}
+
+				// search inside trying best
+				if (viceLeader == null) {
+					logger.info("Trying to find a vice team leader externally from experience 4,3,2,5,1 with role ViceTeamLeader or TeamLeader with best effort...");
+					acceptedRoles = Arrays.asList(Role.ROLE_VICETEAMLEADER_DEF, Role.ROLE_TEAMLEADER_DEF);
+					viceLeader = Utils.lookForCompetentPerson(matchLanguage, Arrays.asList(4, 3, 2, 5, 1), acceptedRoles, lanGroupSet.groupingItems, preferGender, null, true);
+				}
+
+				// search outside trying best
+				if (viceLeader == null) {
+					logger.info("Trying to find a vice team leader in-house from experience 4,3,2,5,1 with role ViceTeamLeader or TeamLeader with best effort...");
+					acceptedRoles = Arrays.asList(Role.ROLE_VICETEAMLEADER_DEF, Role.ROLE_TEAMLEADER_DEF);
+					viceLeader = Utils.lookForCompetentPerson(matchLanguage, Arrays.asList(4, 3, 2, 5, 1), acceptedRoles, _dynamicGroupingSources, preferGender, null, true);
+				}
+
+				// found one
+				if (viceLeader != null) {
+
+					logger.info("Found a vice team leader for group:{}, (UID:{}, name:{}), register role:{}, experience:{}, gender:{}",
+							Utils.getGroupName(matchLanguage, lanGroupSet.groupId), viceLeader.person.getId(), viceLeader.person.getEnglish_name(),
+							viceLeader.person.getRoles(), viceLeader.person.getExperience(), viceLeader.person.getIs_male() == 1 ? 'M' : 'F');
+
+					viceLeader.grouping.setGroup_id(lanGroupSet.groupId);
+					viceLeader.grouping.setGroupedRole(new Role(Role.ROLE_VICETEAMLEADER_DEF));
+
+					lanGroupSet.groupingItems.put(viceLeader.person.getId(), viceLeader);
+					_dynamicGroupingSources.remove(viceLeader.person.getId());
+
+				} else {
+					// maybe no enough ppl to appoint one
+					logger.info("Couldn't find a vice team leader for group: {}", Utils.getGroupName(matchLanguage, lanGroupSet.groupId));
+				}
 			}
-			
-			// make sure some people would be in same team
+
+			// make sure people in same group would be in same team
 			allocateWannaBeWithPersons();
 		}
 	}
@@ -352,52 +421,46 @@ public class MemGrouping {
 			System.out.println("Allocate wanna-be-with person based on Leader/Vice Leader allocation");
 			
 			// collect those need ancestors
-			Iterator<Entry<String, LanguageGrouping>> iter = _groupingResult.entrySet().iterator();
-			while (iter.hasNext()) {
-				Map.Entry<String, LanguageGrouping> entry = iter.next();
+			for (Entry<String, LanguageGrouping> entry : _groupingResult.entrySet()) {
 				LanguageGrouping resultGroupSet = entry.getValue();
 				String matchLanguage = resultGroupSet.language;
-				
+
 				List<Integer> _needAncestors = new LinkedList<Integer>();
-				HashMap<Integer, MemGroupingItem> resultSet = resultGroupSet.groupingItems;
-				
-				{
-					Iterator<Entry<Integer, MemGroupingItem>> resultIter = resultSet.entrySet().iterator();
-					
-					while (resultIter.hasNext()) {
-						Map.Entry<Integer, MemGroupingItem> resultEntry = resultIter.next();
-						Integer resultPersonId = resultEntry.getKey();
-						MemGroupingItem resultGrouping = resultEntry.getValue();
-						
-						// has ancestor : add to the list
-						Integer ancestorId = Utils.getAncestorId(resultGrouping.grouping);
-						if (ancestorId != resultPersonId) {	// has wanna be with
-							
-							if (!_needAncestors.contains(ancestorId)){
-								_needAncestors.add(ancestorId);
-							}
-						}
-						
-						// self is ancestor : add to the list
-						if (_dynamicCircleGroups.containsKey(resultGrouping.person.getId())) {
-							_needAncestors.add(resultGrouping.person.getId());
+				Map<Integer, MemGroupingItem> resultSet = resultGroupSet.groupingItems;
+
+
+				for (Entry<Integer, MemGroupingItem> resultEntry : resultSet.entrySet()) {
+					Integer resultPersonId = resultEntry.getKey();
+					MemGroupingItem resultGrouping = resultEntry.getValue();
+
+					// has ancestor : add to the list
+					Integer ancestorId = Utils.getAncestorId(resultGrouping.grouping);
+					if (ancestorId != resultPersonId) {    // has wanna be with
+
+						if (!_needAncestors.contains(ancestorId)) {
+							_needAncestors.add(ancestorId);
 						}
 					}
+
+					// self is ancestor : add to the list
+					if (_dynamicCircleGroups.containsKey(resultGrouping.person.getId())) {
+						_needAncestors.add(resultGrouping.person.getId());
+					}
 				}
-				
+
 				// process needed ancestors
 				for (Integer ancestorId : _needAncestors) {
-					
-					if (_dynamicCircleGroups.containsKey(ancestorId)){
+
+					if (_dynamicCircleGroups.containsKey(ancestorId)) {
 						HashMap<Integer, MemGroupingItem> newMap = _dynamicCircleGroups.get(ancestorId);
-						
+
 						Utils.transferTheGroupingItems(newMap, resultSet, _dynamicGroupingSources, resultGroupSet.groupId);
 						_dynamicCircleGroups.remove(ancestorId);
 
 					} else {
-						assert(false);
+						assert (false);
 					}
-					
+
 				}
 			}
 		}
@@ -418,7 +481,9 @@ public class MemGrouping {
 			Integer ancestorId = entry.getKey();
 			HashMap<Integer, MemGroupingItem> children = entry.getValue();
 
-			String childLan = Utils.tryAnObjectFromMap(children).grouping.getLanguage();
+			String childLan = children.values().stream().findAny().get().grouping.getLanguage();
+
+			//String childLan = Utils.tryAnObjectFromMap(children).grouping.getLanguage();
 			
 			for (int i=50; i>=0; i--) {	// make it easier, just try enough times to find a receiver
 				LanguageGrouping lanGroup = Utils.getRandonLanguageGroup(childLan, _groupingResult);
@@ -449,19 +514,21 @@ public class MemGrouping {
 				Map.Entry<String, LanguageGrouping> entry = iter.next();
 				LanguageGrouping resultGroupSet = entry.getValue();
 				String matchLanguage = resultGroupSet.language;
-				HashMap<Integer, MemGroupingItem> grpPersons = resultGroupSet.groupingItems;
+				Map<Integer, MemGroupingItem> grpPersons = resultGroupSet.groupingItems;
 			
 				if (!Utils.isRoleExisted(grpPersons, needrole)) {
 					
 					int preferGender = Utils.needFemaleTendency(grpPersons) ? 0 : 1;
-					int[] experiencePriorities = {2,3,1,4,5}; 
+					//int[] experiencePriorities = {2,3,1,4,5};
 					
 					// Try to look for one in house first 
-					MemGroupingItem personItem = Utils.lookForCompetentPerson(matchLanguage, false, experiencePriorities, needrole, true, grpPersons, -1, false, null);
+//					MemGroupingItem personItem = Utils.lookForCompetentPerson(matchLanguage, false, experiencePriorities, needrole, true, grpPersons, -1, false, null);
+					MemGroupingItem personItem = Utils.lookForCompetentPerson(matchLanguage, Arrays.asList(2,1,3,4,5), Arrays.asList(needrole), grpPersons, -1, null, false);
 					
 					if (personItem == null) {
 						// try to look for one from outside and bring it in
-						personItem = Utils.lookForCompetentPerson(matchLanguage, false, experiencePriorities, needrole, true, _dynamicGroupingSources, preferGender, true, null);
+						//personItem = Utils.lookForCompetentPerson(matchLanguage, false, experiencePriorities, needrole, true, _dynamicGroupingSources, preferGender, true, null);
+						personItem = Utils.lookForCompetentPerson(matchLanguage, Arrays.asList(2,1,3,4,5), Arrays.asList(needrole), _dynamicGroupingSources, preferGender, null, true);
 					}
 					
 					if (personItem == null) {
@@ -496,7 +563,7 @@ public class MemGrouping {
 			while (counterIter.hasNext()) {
 				Map.Entry<String, LanguageGrouping> counterEntry = counterIter.next();
 				LanguageGrouping cntLanGroups = counterEntry.getValue();
-				HashMap<Integer, MemGroupingItem> grpPersons = cntLanGroups.groupingItems;
+				Map<Integer, MemGroupingItem> grpPersons = cntLanGroups.groupingItems;
 				
 				if (grpPersons.size() < (int)cntLanGroups.idealCapacity) {
 					allReachedIdealCapacity = false;
@@ -512,7 +579,7 @@ public class MemGrouping {
 				Map.Entry<String, LanguageGrouping> lanEntry = lanIter.next();
 				LanguageGrouping lanGroups = lanEntry.getValue();
 				String language = lanGroups.language;
-				HashMap<Integer, MemGroupingItem> grpPersons = lanGroups.groupingItems;
+				Map<Integer, MemGroupingItem> grpPersons = lanGroups.groupingItems;
 				
 				if (grpPersons.size() >= (int)lanGroups.idealCapacity) {	// reached the ideal capacity
 					System.out.println(String.format("%s has reached the capacity: %d/%f", Utils.getGroupName(language, lanGroups.groupId), grpPersons.size(), lanGroups.idealCapacity));
@@ -572,7 +639,7 @@ public class MemGrouping {
 			Map.Entry<String, LanguageGrouping> testEntry = testIter.next();
 			LanguageGrouping testGroup = testEntry.getValue();
 			String language = testGroup.language;
-			HashMap<Integer, MemGroupingItem> grpPersons = testGroup.groupingItems;
+			Map<Integer, MemGroupingItem> grpPersons = testGroup.groupingItems;
 		
 			String str = String.format("%s, %s has %d ppl. ideal capacity:%f", prefix, Utils.getGroupName(testGroup.language, testGroup.groupId), testGroup.groupingItems.size(), testGroup.idealCapacity);
 			System.out.println(str);
@@ -597,7 +664,7 @@ public class MemGrouping {
 			Map.Entry<String, LanguageGrouping> lanEntry = lanIter.next();
 			LanguageGrouping lanGroup = lanEntry.getValue();
 			String language = lanGroup.language;
-			HashMap<Integer, MemGroupingItem> grpPersons = lanGroup.groupingItems;
+			Map<Integer, MemGroupingItem> grpPersons = lanGroup.groupingItems;
 			
 			System.out.println(String.format("DONE: %s: %d people", Utils.getGroupName(language, lanGroup.groupId), grpPersons.size()));
 			

@@ -1,18 +1,16 @@
 package com.shawn.gec.control;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Logger;
 
 import com.shawn.gec.po.Grouping;
 import com.shawn.gec.po.LanguageGrouping;
 import com.shawn.gec.po.MemGroupingItem;
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+
+import javax.swing.text.html.Option;
 
 public class Utils {
 
@@ -71,7 +69,7 @@ public class Utils {
 		return 1;
 	}
 	
-	public static boolean isRoleExisted(HashMap<Integer, MemGroupingItem> groups, String role){
+	public static boolean isRoleExisted(Map<Integer, MemGroupingItem> groups, String role){
 		Iterator<Entry<Integer, MemGroupingItem>> iter = groups.entrySet().iterator();
 		
 		while (iter.hasNext()) {
@@ -86,7 +84,7 @@ public class Utils {
 		return false;
 	}
 	
-	public static boolean needFemaleTendency(HashMap<Integer, MemGroupingItem> grpPersons) {
+	public static boolean needFemaleTendency(Map<Integer, MemGroupingItem> grpPersons) {
 		Iterator<Entry<Integer, MemGroupingItem>> iter = grpPersons.entrySet().iterator();
 		
 		int maleCounter=0;
@@ -143,7 +141,8 @@ public class Utils {
 			dest.put(grouping.person.getId(), grouping);
 		}
 	}*/
-	
+
+	/*
 	public static MemGroupingItem tryAnObjectFromMap(HashMap<Integer, MemGroupingItem> map) {
 		Iterator<Entry<Integer, MemGroupingItem>> Iter = map.entrySet().iterator();
 		
@@ -154,7 +153,7 @@ public class Utils {
 		}
 		
 		return null;
-	}
+	}*/
 	
 	public static LanguageGrouping getRandonLanguageGroup(String language, Map<String, LanguageGrouping> _groupingResult) {
 		
@@ -191,7 +190,7 @@ public class Utils {
 			MemGroupingItem grpItem = entty.getValue();
 			
 			if (grpItem.grouping.getLanguage().compareTo(language) == 0
-					&& (preferGender==-1 ? true : grpItem.person.getIs_male()==preferGender)) {
+					&& (preferGender == -1 || grpItem.person.getIs_male() == preferGender)) {
 				return grpItem;
 			}
 		}
@@ -202,8 +201,83 @@ public class Utils {
 		
 		return null;
 	}
-	
+
+	public static MemGroupingItem lookForCompetentPerson(
+			String language,
+			List<Integer> experiencePriorities,
+			List<String> acceptableRoles,
+			Map<Integer, MemGroupingItem> seachingScope,
+			Integer preferGender,
+			List<Integer> excludedIds,
+			boolean toTryBest
+			) {
+
+		for (Integer _experience : experiencePriorities) {
+
+			for (Entry<Integer, MemGroupingItem> entry : seachingScope.entrySet()) {
+				MemGroupingItem item = entry.getValue();
+
+				if (item.grouping.getGroupedRole() != null                                        // already assigned a group
+						|| (excludedIds != null && excludedIds.contains(item.person.getId()))    // excluded
+						|| (item.grouping.getLanguage().compareToIgnoreCase(language) != 0)        // language doesn't match
+						|| (_experience != item.person.getExperience())                            // experience doesn't match
+						|| (preferGender != -1 && item.person.getIs_male() != preferGender)        // gender doesn't match
+						) {
+					continue;
+				}
+
+				boolean roleMatched = (acceptableRoles == null);
+				if (acceptableRoles != null) {
+					for (String r : acceptableRoles)
+						if (item.grouping.getRole().hasRole(r)) {
+							roleMatched = true;
+							break;
+						}
+				}
+
+				if (!roleMatched) {    // role doesn't match
+					continue;
+				}
+
+
+				// all matched, return
+				return item;
+			}
+		}
+
+		if (!toTryBest)
+			return null;
+
+		MemGroupingItem retItem = null;
+
+		// didnt find anyone, loose the gender limit:
+		if (preferGender != -1) {
+			retItem = lookForCompetentPerson(language, experiencePriorities, acceptableRoles, seachingScope, -1, excludedIds, false);
+		}
+
+		// still didnt find anyone, loose the role limit:
+		if (retItem == null) {
+			retItem = lookForCompetentPerson(language, experiencePriorities, null, seachingScope, preferGender, excludedIds, false);
+		}
+
+		// still didnt find anyone, loose the gender and role limitation
+		if (retItem == null) {
+			retItem = lookForCompetentPerson(language, experiencePriorities, null, seachingScope, -1, excludedIds, false);
+		}
+
+		if (retItem == null) {
+			retItem = lookForCompetentPerson(language, experiencePriorities, null, seachingScope, -1, null, false);
+		}
+
+		if (retItem == null) {
+			retItem = lookForCompetentPerson(language, Arrays.asList(5, 4, 3, 2, 1), null, seachingScope, -1, null, false);
+		}
+
+		return retItem;
+	}
+
 	// experiencePriority:-1:doesnt care, 0: bottom-up, 1:top-down, preferGender:-1 dont care
+	/*
 	public static MemGroupingItem lookForCompetentPerson(
 			String language, 
 			boolean prioritySensitive, 
@@ -254,7 +328,7 @@ public class Utils {
 			retItem = lookForCompetentPerson(language, prioritySensitive, experiencePriorities, needed_role, false, scope, -1, false, excludedIds);
 		
 		return retItem;
-	}
+	}*/
 	
 	public static int getAncestorId(Grouping grp){
 		return getAncestorGrouping(grp).getPerson_id();
