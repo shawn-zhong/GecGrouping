@@ -7,11 +7,10 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.shawn.gec.control.SettingCenter;
 import com.shawn.gec.po.Activity;
 
 public class ActivityDao implements IActivityDao {
-	
-	String fileName = "/Users/Shawn/Documents/dev/GEC_Grouping/gec.db";
 	
 	{
 		try {
@@ -28,8 +27,7 @@ public class ActivityDao implements IActivityDao {
 	@Override
 	public Activity InsertOrUpdateActivity(Activity act){
 		
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+fileName);
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+ SettingCenter.getDbFilePath())){
 			Statement statement = conn.createStatement();
 
 			
@@ -76,8 +74,7 @@ public class ActivityDao implements IActivityDao {
 	@Override
 	public List<Activity> GetActivityList() {
 		
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+fileName);
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sqlSelect = String.format("select * from activity");
