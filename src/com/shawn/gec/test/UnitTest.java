@@ -32,7 +32,7 @@ public class UnitTest {
 	@Ignore
 	public void testFetchPersonByKey(){
 		IPersonDao personDao = new PersonDao();
-		List<MemGroupingItem> items = personDao.GetPersonByKeyword("");
+		List<MemGroupingItem> items = personDao.getPersonByKeyword("");
 		
 		System.out.println("seached size : " + items.size());
 		
@@ -46,7 +46,7 @@ public class UnitTest {
 	@Ignore
 	public void testFetchPersonById() {
 		IPersonDao personDao = new PersonDao();
-		MemGroupingItem item = personDao.GetPersonById(3);
+		MemGroupingItem item = personDao.getPersonById(3);
 		System.out.println(item);
 	}
 	

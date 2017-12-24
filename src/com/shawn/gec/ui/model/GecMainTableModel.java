@@ -14,7 +14,7 @@ public class GecMainTableModel extends AbstractTableModel {
 
 	private Vector content = new Vector();
 	private String[] titles = {"报名ID", "分配组号", "分组角色", "性别", "英文名", "中文名", "手机", "微信", "和TA一起", "报名语言", "报名角色", "经验值", "备注信息"};
-	boolean isTableEditing = false;
+	private boolean isTableEditing = false;
 	
 	public Vector getContent() {
 		return content;
@@ -33,7 +33,7 @@ public class GecMainTableModel extends AbstractTableModel {
 		v.add(p.getId());
 
 		if (g.getGroup_id() > 0) {
-			v.add(Utils.getGroupName(g) + (g.getIsFixed()==1 ? " ＊":""));
+			v.add(Utils.getGroupName(g.getLanguage(), g.getGroup_id()) + (g.getIsFixed()==1 ? " ＊":""));
 			v.add(g.getGroupedRole().RoleNames);
 		} else {
 			v.add("<null>");
@@ -73,13 +73,24 @@ public class GecMainTableModel extends AbstractTableModel {
 	public void removeAll(){
 		content.clear();
 	}
-	
+
+	public void cleanGroupColumn() {
+		for(int i=0; i<content.size(); i++) {
+			((Vector)   content.get(i)).remove(1);
+			((Vector)   content.get(i)).remove(2);
+			((Vector)   content.get(i)).add(1, "<waiting..>");
+			((Vector)   content.get(i)).add(2, "");
+			this.fireTableCellUpdated(i,   1);
+			this.fireTableCellUpdated(i,   2);
+		}
+	}
+
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		// TODO Auto-generated method stub
 		((Vector)   content.get(rowIndex)).remove(columnIndex);     
 		((Vector)   content.get(rowIndex)).add(columnIndex, aValue);     
-		this.fireTableCellUpdated(rowIndex,   columnIndex);   
+		this.fireTableCellUpdated(rowIndex,   columnIndex);
 		
 		//super.setValueAt(aValue, rowIndex, columnIndex);
 	}

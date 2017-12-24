@@ -1,11 +1,9 @@
 package com.shawn.gec.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.DateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,9 +31,7 @@ public class ActivityDao implements IActivityDao {
 		try{
 			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+fileName);
 			Statement statement = conn.createStatement();
-			
-			// id integer primary key autoincrement, name text not null, capacity integer, group_capacity integer, 
-			//launch_time text, create_time text, create_staff text, remark text
+
 			
 			String sqlInsert = String.format("insert into activity(code, name, capacity, group_capacity, launch_time , create_time , create_staff, remark) " + 
 											"select '%s', '%s', %d, '%d', '%s', '%s', '%s', '%s' " +
@@ -43,8 +39,6 @@ public class ActivityDao implements IActivityDao {
 											act.getCode(), act.getName(), act.getCapacity(), act.getGroup_capacity(), act.getLaunch_time().toString(), act.getCreate_time().toString(), 
 											act.getCreate_staff(), act.getRemark(), act.getCode()
 										);
-			
-			System.out.println(sqlInsert);
 			
 			statement.executeUpdate(sqlInsert);
 			
@@ -61,7 +55,6 @@ public class ActivityDao implements IActivityDao {
 			
 			while (rs.next()) {
 	            idstr   = rs.getString("id");   // Column 1
-	            System.out.println("id: "+idstr);
 	        }
 	       
 	        // Close the connection
@@ -71,7 +64,7 @@ public class ActivityDao implements IActivityDao {
 	        return act;
 	        
 		}catch(Exception ex){
-			System.out.println(ex.getMessage());
+			ex.printStackTrace();
 		}
 		
 		return null;
@@ -101,9 +94,7 @@ public class ActivityDao implements IActivityDao {
 	            info.setCapacity(rs.getInt("capacity"));
 	            info.setCode(rs.getString("code"));
 	            info.setCreate_staff(rs.getString("create_staff"));
-	           // info.setCreate_time(DateFormat.parse(rs.getString("create_time")));
 	            info.setGroup_capacity(rs.getInt("group_capacity"));
-	           // info.setLaunch_time(launch_time);
 	            info.setName(rs.getString("name"));
 	            info.setRemark(rs.getString("remark"));
 

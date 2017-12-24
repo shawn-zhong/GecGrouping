@@ -1,6 +1,5 @@
 package com.shawn.gec.dao;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 import com.shawn.gec.po.MemGroupingItem;
@@ -8,14 +7,15 @@ import com.shawn.gec.po.Person;
 
 public interface IPersonDao {
 
-	Person InsertOrUpdatePerson(Person p);
-	MemGroupingItem GetPersonById(int id);
-	List<MemGroupingItem> GetPersonByKeyword(String keyword);
-	List<MemGroupingItem> GetDuplicateRegistration();
-	List<MemGroupingItem> GetWannaBeWithList();
-	List<MemGroupingItem> GetGroupMembers(int groupId);
-	List<MemGroupingItem> GetAllGroupMembers();
-	List<MemGroupingItem> GetProblemeticItems();
+	Person insertOrUpdatePerson(Person p);
+	MemGroupingItem getPersonById(int id);
+	List<MemGroupingItem> getPersonByKeyword(String keyword);
+	List<MemGroupingItem> getDuplicateRegistration();
+	List<MemGroupingItem> getWannaBeWithList();
+	List<MemGroupingItem> getGroupMembers(int groupId);
+	List<MemGroupingItem> getAllGroupMembersOrderByGroupNo();
+	List<MemGroupingItem> getProblemeticItems();
+	List<MemGroupingItem> getGroupLeaders();
 }
 
 
@@ -23,7 +23,6 @@ public interface IPersonDao {
  * 
  * 
  * PRAGMA foreign_keys = 0;
-
 PRAGMA foreign_keys = 0;
 
 CREATE TABLE sqlitestudio_temp_table AS SELECT *
@@ -46,7 +45,7 @@ CREATE TABLE person (
     district     TEXT,
     language     TEXT    DEFAULT English
                          NOT NULL,
-    experience   INT     DEFAULT (1) 
+    experience   INT     DEFAULT (1)
                          NOT NULL,
     roles        TEXT,
     remark       TEXT,
@@ -90,7 +89,6 @@ INSERT INTO person (
 DROP TABLE sqlitestudio_temp_table;
 
 PRAGMA foreign_keys = 1;
-
 
 
  * 

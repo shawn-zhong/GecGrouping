@@ -9,6 +9,8 @@ import javax.swing.table.TableColumn;
 
 import com.shawn.gec.dao.ComplexDao;
 import com.shawn.gec.dao.GroupingDao;
+import com.shawn.gec.dao.IComplexDao;
+import com.shawn.gec.dao.IGroupingDao;
 import com.shawn.gec.po.GroupingStat;
 import com.shawn.gec.ui.model.GecGroupTableModel;
 
@@ -26,13 +28,13 @@ public class GroupListDialog extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final JPanel contentPanel = new JPanel();
-	private JTable tableStat;
 	private GecGroupTableModel tableModel=new GecGroupTableModel();
 	private JButton btn_lock;
-	private JLabel label_stat;
 
 	private static final GroupListDialog dialog = new GroupListDialog();
+	
+	private JLabel label_stat;
+	private JTable tableStat;
 	
 	/**
 	 * Launch the application.
@@ -52,72 +54,66 @@ public class GroupListDialog extends JDialog {
 	 * Create the dialog.
 	 */
 	public GroupListDialog() {
-		setBounds(100, 100, 600, 380);
+		setBounds(100, 100, 600, 450);
 		getContentPane().setLayout(new BorderLayout());
+		JPanel contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		contentPanel.setLayout(null);
-		
+		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
-			JScrollPane scrollPane = new JScrollPane(); 
-			scrollPane.setBounds(10, 10, 580, 247);
+			JPanel panel = new JPanel();
+			contentPanel.add(panel, BorderLayout.SOUTH);
+			panel.setLayout(new BorderLayout(0, 0));
+			{
+				label_stat = new JLabel("stat");
+				label_stat.setForeground(Color.GRAY);
+				label_stat.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+				panel.add(label_stat, BorderLayout.NORTH);
+			}
+			{
+				JLabel lblNewLabel_1 = new JLabel("* 双击小组条目可在大屏幕显示该小组的所有成员");
+				lblNewLabel_1.setForeground(Color.GRAY);
+				lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+				panel.add(lblNewLabel_1, BorderLayout.WEST);
+			}
+			{
+				JLabel lblNewLabel_2 = new JLabel("* 锁定状态下的小组及成员将不会受自动分组的影响；支持上锁及解锁");
+				lblNewLabel_2.setForeground(Color.GRAY);
+				lblNewLabel_2.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+				panel.add(lblNewLabel_2, BorderLayout.SOUTH);
+			}
+		}
+		{
+			JScrollPane scrollPane = new JScrollPane();
 			contentPanel.add(scrollPane, BorderLayout.CENTER);
-			
-			tableStat = new JTable(tableModel);
-			tableStat.addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent e) {
-					
-					if (e.getClickCount() == 1) {
-						
-						int row = tableStat.getSelectedRow();
-						if (row != -1) {
-							String lock = tableModel.getValueAt(row, 5).toString();
-							if (lock.isEmpty()) {
-								btn_lock.setText("上锁");
-							} else {
-								btn_lock.setText("解锁");
+			{
+				tableStat = new JTable(tableModel);
+				scrollPane.setViewportView(tableStat);
+
+				tableStat.addMouseListener(new MouseAdapter() {
+					public void mouseClicked(MouseEvent e) {
+						if (e.getClickCount() == 2) {
+
+							int selectedRowNumber = tableStat.getSelectedRow();
+
+							if (selectedRowNumber == -1 ) {
+								return;
 							}
+
+							int groupID = Integer.parseInt(tableStat.getValueAt(selectedRowNumber, 0).toString());
+
+							AppWindow.window.searchAndShow(AppWindow.SearchType.ByGroupId, groupID, null);
 						}
 					}
-					
-	        		if (e.getClickCount() == 2) {
-	        			int row = tableStat.getSelectedRow();
-						if (row != -1) {
-							int groupId = Integer.parseInt(tableModel.getValueAt(row, 0).toString());
-							AppWindow.window.searchAndShow(AppWindow.SearchType.ByGroupId, groupId, null);
-						}
-	        		}
-					
-				}
-			});
-			//tableStat.setShowHorizontalLines(true);
-			scrollPane.setViewportView(tableStat);
-
-			label_stat = new JLabel("* ");
-			label_stat.setForeground(Color.GRAY);
-			label_stat.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-			label_stat.setBounds(10, 260, 455, 16);
-			contentPanel.add(label_stat);
-
-			JLabel lblNewLabel = new JLabel("* 双击小组条目可在大屏幕显示该小组的所有成员");
-			lblNewLabel.setForeground(Color.GRAY);
-			lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-			lblNewLabel.setBounds(10, 277, 455, 16);
-			contentPanel.add(lblNewLabel);
-			
-			JLabel label = new JLabel("* 锁定状态下的小组及成员将不会受自动分组的影响；支持上锁及解锁");
-			label.setForeground(Color.GRAY);
-			label.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-			label.setBounds(10, 294, 455, 16);
-			contentPanel.add(label);
-
-			
+				});
+			}
+		}
+		
+		{
 			TableColumn tableColumn = tableStat.getColumnModel().getColumn(0);
-	        tableColumn.setPreferredWidth(30);	        
-	        
-	        tableColumn = tableStat.getColumnModel().getColumn(1);
-	        tableColumn.setPreferredWidth(150);	
+	        tableColumn.setPreferredWidth(30);
+			tableColumn = tableStat.getColumnModel().getColumn(1);
+	        tableColumn.setPreferredWidth(150);
 		}
 		
 		{
@@ -135,13 +131,13 @@ public class GroupListDialog extends JDialog {
 						String lock = tableModel.getValueAt(row, 5).toString();
 
 						new Thread(()->{
-							GroupingDao dao = new GroupingDao();
+							IGroupingDao dao = new GroupingDao();
 							if (lock.isEmpty()) {
-								dao.LockGroup(groupId, true);
+								dao.lockGroup(groupId, true);
 								tableModel.setValueAt("已上锁", row, 5);
 								btn_lock.setText("解锁");
 							} else {
-								dao.LockGroup(groupId, false);
+								dao.lockGroup(groupId, false);
 								tableModel.setValueAt("", row, 5);
 								btn_lock.setText("上锁");
 							}
@@ -198,7 +194,7 @@ public class GroupListDialog extends JDialog {
 		tableModel.removeAll();
 
 		new Thread(()->{
-			ComplexDao dao = new ComplexDao();
+			IComplexDao dao = new ComplexDao();
 			List<GroupingStat> stats = dao.getGroupingStatistics();
 
 			SwingUtilities.invokeLater(()->{

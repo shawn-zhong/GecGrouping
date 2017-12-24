@@ -1,5 +1,7 @@
 package com.shawn.gec.control;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -36,18 +38,12 @@ public class SettingCenter {
 	private static List<String> roleNameList;
 
 	public static final SettingCenter instance = new SettingCenter();
-	
-	public static void fakeSettings() {
-	    /*
-		dbFilePath = "/Users/Shawn/Documents/dev/GEC_Grouping/gec.db";
-		exlFilePath = "/Users/Shawn/Documents/dev/GEC_Grouping/newsample3.csv";
-		exlDeltaFilePath = "/Users/Shawn/Documents/dev/GEC_Grouping/newsample2_delta.csv";
-		groupCapacity = 15;*/
 
-
-	}
+	private static Logger logger = LoggerFactory.getLogger(SettingCenter.class);
 
 	public static void ReadFromSettingFile() {
+
+        Clear();
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
@@ -56,6 +52,7 @@ public class SettingCenter {
 
             File f = new File("setting.xml");
             if (!f.exists()) {
+                logger.error("the setting file doesn't exist, please check the there is a setting.xml file under the same folder");
                 f = new File("/Users/Shawn/Documents/workspace/GecGrouping/resource/setting.xml");
             }
 
@@ -63,16 +60,12 @@ public class SettingCenter {
                 parser.parse(f, new SettingXmlHandler());
             }
 
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.error("exception while parsing the setting file", e);
         }
     }
 
-	public void Clear() {
+	public static void Clear() {
 	    roleNameList.clear();
     }
 

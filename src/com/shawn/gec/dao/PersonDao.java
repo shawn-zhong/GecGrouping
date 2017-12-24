@@ -13,6 +13,8 @@ import com.shawn.gec.po.Grouping;
 import com.shawn.gec.po.MemGroupingItem;
 import com.shawn.gec.po.Person;
 import com.shawn.gec.po.Role;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PersonDao implements IPersonDao {
 	
@@ -24,16 +26,16 @@ public class PersonDao implements IPersonDao {
 			e.printStackTrace();
 		}
 	}
-	
+
+	private Logger logger = LoggerFactory.getLogger(PersonDao.class);
 	
 	/* (non-Javadoc)
-	 * @see com.shawn.gec.dao.IPersonDao#InsertOrUpdatePerson(com.shawn.gec.po.Person)
+	 * @see com.shawn.gec.dao.IPersonDao#insertOrUpdatePerson(com.shawn.gec.po.Person)
 	 */
 	@Override
-	public Person InsertOrUpdatePerson(Person p)
+	public Person insertOrUpdatePerson(Person p)
 	{
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sqlInsert = String.format("INSERT INTO person (id,is_male,english_name,chinese_name,hometown,occupation,mobile," + 
@@ -45,17 +47,7 @@ public class PersonDao implements IPersonDao {
                     p.getLanguage(), p.getExperience(), p.getRoles(), p.getRemark(), p.getBe_with(),
                     p.getId()
                     );
-                    
-			/*
-			String sqlInsert = String.format("insert into person(is_male, english_name, chinese_name, first_time_english_name, hometown, occupation, mobile_number, qq, wechat, district) " + 
-											"select %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' " +
-											"where not exists (select 1 from person where mobile_number = '%s');", 
-											p.getIs_male(), p.getEnglish_name(), p.getChinese_name(), p.getEnglish_name(), p.getHometown(), p.getOccupation(), p.getMobile(),
-											p.getQq(), p.getWechat(), p.getDistrict(),
-											p.getMobile()
-										);*/
-			
-			//System.out.println(sqlInsert);
+			logger.debug(sqlInsert);
 			statement.executeUpdate(sqlInsert);
 			
 			String sqlUpdate = String.format("update person set is_male = %d, english_name='%s', chinese_name='%s', hometown='%s', occupation='%s', mobile='%s', " +
@@ -70,87 +62,80 @@ public class PersonDao implements IPersonDao {
 	        // Close the connection
 	        conn.close();
 	        
-	        return GetPersonById(p.getId()).person;
+	        return getPersonById(p.getId()).person;
 	        
 		}catch(Exception ex){
-			ex.printStackTrace();
-			//System.out.println(ex.getMessage());
+			logger.error("Exception while executing database sql", ex);
 		}
 
 		return  new Person();
 	}
 	
-	public List<MemGroupingItem> GetPersonByKeyword(String keyword) {
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+	public List<MemGroupingItem> getPersonByKeyword(String keyword) {
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sqlSelect = String.format("select * from person left join grouping on person.id = grouping.g_uid where english_name like '%%%s%%' or chinese_name like '%%%s%%' or occupation like '%%%s%%' or mobile like '%%%s%%' " +
                         " or qq like '%%%s%%' or wechat like '%%%s%%' or language like '%%%s%%' or roles like '%%%s%%' or be_with like '%%%s%%' " +
                         " or g_roledesc like '%%%s%%' or g_groupname like '%%%s%%' ",
                         keyword,keyword,keyword,keyword,keyword,keyword,keyword,keyword,keyword, keyword, keyword);
-			
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			List<MemGroupingItem> items = readResultSet(rs);
 
 	        conn.close();
-	        
-	        //System.out.print(p.toString());
 
 	        return items;
 			
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return null;
 	}
 	
-	public MemGroupingItem GetPersonById(int id){
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+	public MemGroupingItem getPersonById(int id){
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sqlSelect = String.format("select * from person left join grouping on person.id = grouping.g_uid where person.id = %d;", id);
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			
 			List<MemGroupingItem> items = readResultSet(rs);
-
 	        conn.close();
 	        
 	        return items.size()==0? null: items.get(0);
 			
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return null;
 	}
 	
-	public List<MemGroupingItem> GetWannaBeWithList(){
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+	public List<MemGroupingItem> getWannaBeWithList(){
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
-			String sqlSelect = String.format("select * from person left join grouping on person.id = grouping.g_uid where be_with <> '';");
+			String sqlSelect = "select * from person left join grouping on person.id = grouping.g_uid where be_with <> '';";
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			
 			List<MemGroupingItem> items = readResultSet(rs);
-
 	        conn.close();
 	        
 	        return items;
 			
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return null;
 	}
 	
-	public List<MemGroupingItem> GetDuplicateRegistration() {
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+	public List<MemGroupingItem> getDuplicateRegistration() {
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sqlSelect = "select * from person left join grouping on person.id = grouping.g_uid where person.mobile in ( " +
@@ -160,87 +145,82 @@ public class PersonDao implements IPersonDao {
 								"select * from person left join grouping on person.id = grouping.g_uid where person.wechat in ( " +
 								"select wechat from person group by wechat having count(*) > 1 " +
 								") order by mobile; ";
-			
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			List<MemGroupingItem> items = readResultSet(rs);
 
 	        conn.close();
-	        
-	        //System.out.print(p.toString());
 
 	        return items;
 			
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return null;
 	}
 
-	public List<MemGroupingItem> GetAllGroupMembers() {
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+	// export to file
+	public List<MemGroupingItem> getAllGroupMembersOrderByGroupNo() {
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath())){
 			Statement statement = conn.createStatement();
+
 
 			String sqlSelect = "select Tmp.g_uid as id, * from (\n" +
 					"select * from grouping left join roles on grouping.g_roledesc=roles.roleName\n" +
 					") as Tmp left join person on Tmp.g_uid=person.id\n" +
 					"order by Tmp.g_gid asc, Tmp.priority desc;";
 
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			List<MemGroupingItem> items = readResultSet(rs);
 
 			conn.close();
-
 			return items;
 
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 
 		return null;
 	}
 
-	public List<MemGroupingItem> GetGroupMembers(int groupId) {
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath());
+	public List<MemGroupingItem> getGroupMembers(int groupId) {
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())) {
 			Statement statement = conn.createStatement();
 
 			String sqlSelect = String.format("select Tmp.g_uid as id, * from (\n" +
 					"select * from grouping left join roles on grouping.g_roledesc=roles.roleName where grouping.g_gid = %d\n" +
 					") as Tmp left join person on Tmp.g_uid=person.id\n" +
 					"order by Tmp.g_gid asc, Tmp.priority desc;", groupId);
-			
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			List<MemGroupingItem> items = readResultSet(rs);
 
 	        conn.close();
-	       
 	        return items;
 			
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return null;
 	}
 
-	public List<MemGroupingItem> GetProblemeticItems() {
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath());
+	public List<MemGroupingItem> getProblemeticItems() {
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())){
 			Statement statement = conn.createStatement();
 
 			String sqlSelect = "select * from person left join grouping on person.id = grouping.g_uid where length(grouping.g_remark) >0; ";
-
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			List<MemGroupingItem> items = readResultSet(rs);
 
 			conn.close();
-
 			return items;
 
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 
 		return null;
@@ -305,9 +285,29 @@ public class PersonDao implements IPersonDao {
 	        items.add(item);
         }
 		} catch(Exception ex) {
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return items;
+	}
+
+	public List<MemGroupingItem> getGroupLeaders() {
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.getDbFilePath())) {
+			Statement statement = conn.createStatement();
+
+			String sqlSelect = "select * from person left join grouping on person.id = grouping.g_uid where grouping.g_roledesc like '%组长%' order by grouping.g_gid asc, grouping.g_roledesc desc; ";
+			logger.debug(sqlSelect);
+			ResultSet rs = statement.executeQuery(sqlSelect);
+			List<MemGroupingItem> items = readResultSet(rs);
+
+			conn.close();
+			return items;
+
+		}catch(Exception ex){
+			logger.error("Exception while executing database sql", ex);
+		}
+
+		return null;
+
 	}
 }

@@ -8,10 +8,13 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.shawn.gec.control.SettingCenter;
 import com.shawn.gec.control.Utils;
 import com.shawn.gec.po.Grouping;
 import com.shawn.gec.po.Role;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static com.shawn.gec.control.SettingCenter.getDbFilePath;
 
 public class GroupingDao implements IGroupingDao {
 
@@ -23,15 +26,16 @@ public class GroupingDao implements IGroupingDao {
 			e.printStackTrace();
 		}
 	}
-	
+
+	private Logger logger = LoggerFactory.getLogger(GroupingDao.class);
+
 	/* (non-Javadoc)
-	 * @see com.shawn.gec.dao.IActivityGroupDao#InsertOrUpdate(com.shawn.gec.po.ActivityGroup)
+	 * @see com.shawn.gec.dao.IActivityGroupDao#insertOrUpdate(com.shawn.gec.po.ActivityGroup)
 	 */
 	@Override
-	public Grouping InsertOrUpdate(Grouping grp)
+	public Grouping insertOrUpdate(Grouping grp)
 	{
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+ getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sqlInsert = String.format("insert into grouping(g_uid, g_roledesc , g_bewith, g_gid, g_language, g_groupname, g_remark, g_fixed ) " +
@@ -39,29 +43,26 @@ public class GroupingDao implements IGroupingDao {
 											"where not exists (select 1 from grouping where g_uid = %d);", 
 											grp.getPerson_id(),
 											grp.getGroupedRole() == null?null:grp.getGroupedRole().RoleNames, grp.getBe_with_uid(),
-											grp.getGroup_id(), grp.getLanguage(), Utils.getGroupName(grp), grp.getRemark(), grp.getIsFixed(),
+											grp.getGroup_id(), grp.getLanguage(), Utils.getGroupName(grp.getLanguage(), grp.getGroup_id()), grp.getRemark(), grp.getIsFixed(),
 											grp.getPerson_id()
 										);
-			
-			//System.out.println(sqlInsert);
-			
+			logger.debug(sqlInsert);
 			statement.executeUpdate(sqlInsert);
 			
 			// update
 			String sqlUpdate = String.format("update grouping set g_roledesc='%s', "
 					+ "							g_bewith=%d, g_gid=%d, g_language='%s', g_groupname='%s', g_remark='%s', g_fixed=%d where g_uid = %d",
 											grp.getGroupedRole() == null?null:grp.getGroupedRole().RoleNames,
-											grp.getBe_with_uid(), grp.getGroup_id(), grp.getLanguage(), Utils.getGroupName(grp), grp.getRemark(), grp.getIsFixed(), grp.getPerson_id());
+											grp.getBe_with_uid(), grp.getGroup_id(), grp.getLanguage(), Utils.getGroupName(grp.getLanguage(), grp.getGroup_id()), grp.getRemark(), grp.getIsFixed(), grp.getPerson_id());
 			statement.executeUpdate(sqlUpdate);
-			
-			
+
 	        // Close the connection
 	        conn.close();
 	        
-	        return GetGroupingByPersonId(grp.getPerson_id());
+	        return getGroupingByPersonId(grp.getPerson_id());
 	        
 		}catch(Exception ex) {
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 
 		return new Grouping();
@@ -70,14 +71,12 @@ public class GroupingDao implements IGroupingDao {
 	public List<Grouping> GetGroupings(){
 		
 		List<Grouping> result = new LinkedList<Grouping>();
-		
-		Connection conn;
-		try {
-			conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+ getDbFilePath())) {
 			Statement statement = conn.createStatement();
 			
 			String sqlSelect = String.format("select * from grouping;");
-			
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			Grouping g = new Grouping();
 
@@ -97,31 +96,26 @@ public class GroupingDao implements IGroupingDao {
 	            result.add(g);
 			}
 			
-			System.out.println(g.toString());
-			
 			return result;
 			
-		} catch (SQLException e) {
+		} catch (SQLException ex) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return null;
 		
 	}
 	
-	public Grouping GetGroupingByPersonId(int personId){
-		
-		Connection conn;
-		try {
-			conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+	public Grouping getGroupingByPersonId(int personId){
+
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+ getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sqlSelect = String.format("select * from grouping where g_uid = %d;", personId);
-			
+			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			Grouping g = new Grouping();
-			
 
 			while (rs.next()) {
 	            g.setId(rs.getInt("id"));   // Column 1
@@ -137,33 +131,31 @@ public class GroupingDao implements IGroupingDao {
 	            g.setGroupedRole(groupedRole);
 			}
 			
-			System.out.println(g.toString());
-			
 			return g;
 			
-		} catch (SQLException e) {
+		} catch (SQLException ex) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 		
 		return null;
 	}
 	
-	public void LockGroup(int grpID, boolean needLock) {
+	public void lockGroup(int grpID, boolean needLock) {
 		// 
 		
-		try{
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:"+SettingCenter.instance.getDbFilePath());
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:"+ getDbFilePath())){
 			Statement statement = conn.createStatement();
 			
 			String sql = String.format("update grouping set g_fixed = %d where g_gid = %d;", needLock ? 1 : 0, grpID);
+			logger.debug(sql);
 			statement.executeUpdate(sql);
 
 	        // Close the connection
 	        conn.close();
 			
 		}catch(Exception ex){
-			ex.printStackTrace();
+			logger.error("Exception while executing database sql", ex);
 		}
 	}
 	

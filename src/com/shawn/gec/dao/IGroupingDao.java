@@ -3,14 +3,12 @@ package com.shawn.gec.dao;
 import java.util.List;
 
 import com.shawn.gec.po.Grouping;
-import com.shawn.gec.po.MemGroupingItem;
 
 public interface IGroupingDao {
 
-	Grouping InsertOrUpdate(Grouping grp);
-	Grouping GetGroupingByPersonId(int personId);
-	List<Grouping> GetGroupings();
-	void LockGroup(int grpID, boolean needLock);
+	Grouping insertOrUpdate(Grouping grp);
+	Grouping getGroupingByPersonId(int personId);
+	void lockGroup(int grpID, boolean needLock);
 
 }
 
@@ -63,6 +61,34 @@ INSERT INTO grouping (
 DROP TABLE sqlitestudio_temp_table;
 
 PRAGMA foreign_keys = 1;
+
+
+
+PRAGMA foreign_keys = 0;
+
+CREATE TABLE sqlitestudio_temp_table AS SELECT *
+                                          FROM roles;
+
+DROP TABLE roles;
+
+CREATE TABLE roles (
+    roleName TEXT    NOT NULL
+                     UNIQUE,
+    priority INTEGER NOT NULL
+);
+
+INSERT INTO roles (
+                      roleName,
+                      priority
+                  )
+                  SELECT roleName,
+                         priority
+                    FROM sqlitestudio_temp_table;
+
+DROP TABLE sqlitestudio_temp_table;
+
+PRAGMA foreign_keys = 1;
+
 
 
  * 

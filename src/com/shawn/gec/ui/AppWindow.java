@@ -9,9 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 import javax.swing.table.TableColumn;
 
-import com.shawn.gec.control.Processor;
+import com.shawn.gec.control.ControlPanel;
 import com.shawn.gec.control.SettingCenter;
 import com.shawn.gec.dao.ComplexDao;
+import com.shawn.gec.dao.IComplexDao;
 import com.shawn.gec.dao.IPersonDao;
 import com.shawn.gec.dao.PersonDao;
 import com.shawn.gec.po.Grouping;
@@ -30,7 +31,7 @@ import java.awt.Color;
 public class AppWindow {
 
     public enum SearchType {
-        ByKeyWord, ByGroupId, ByDuplicateReg, ByBeWith, ByGroupOrder, ByHavingRemark
+        ByKeyWord, ByGroupId, ByDuplicateReg, ByBeWith, ByGroupOrder, ByHavingRemark, ByGroupLeaders
     }
 
     private static final Logger logger = LoggerFactory.getLogger(AppWindow.class);
@@ -43,42 +44,38 @@ public class AppWindow {
 	private JLabel lbl_title_search_info;
 	private JLabel lbl_title_search_stat;
 
+	private static boolean isDBOK = true;
+
 	public static AppWindow window = new AppWindow();
 
 	// below 3 is for search condition:
-    SearchType _conditonSearchType;
+    private SearchType _conditonSearchType;
 	private Optional<Integer> _conditionGroupId;
 	private Optional<String> _conditionKeyword;
 	
 	public static void main(String[] args) {
 
-        logger.info("FIRST LINE OF SLF4J");
+		// read settings and test DB
+		readSettingsAndTestDBConnectivity();
 
-	    // read the settings from xml file
-        SettingCenter.ReadFromSettingFile();
-        logger.info("All the settings :");
-        logger.info(SettingCenter.instance.toString());
+		window.refreshWindowTitle();
 
         // store the roles for selecting order
         new Thread(()->{
-            ComplexDao dao = new ComplexDao();
+            IComplexDao dao = new ComplexDao();
             int i=100;
             for (String role : SettingCenter.getRoleNameList()) {
-                dao.InsertOrUpdateRolesPriority(role, i--);
+                dao.insertOrUpdateRolesPriority(role, i--);
             }
         }).start();
 
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					//AppWindow window = new AppWindow();
-
-					window.frmGecGroupingSoftware.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		EventQueue.invokeLater(() -> {
+            try {
+                window.frmGecGroupingSoftware.setVisible(true);
+            } catch (Exception e) {
+                logger.error("error when initialize AppWindow", e);
+            }
+        });
 	}
 
 	/**
@@ -87,6 +84,28 @@ public class AppWindow {
 	 */
 	private AppWindow() {
 		initialize();
+	}
+
+	private static void readSettingsAndTestDBConnectivity() {
+
+		// read the settings from xml file
+		SettingCenter.ReadFromSettingFile();
+		logger.info("All the settings :");
+		logger.info(SettingCenter.instance.toString());
+
+		new Thread(()->{
+			try {
+				IComplexDao dao = new ComplexDao();
+				dao.testDBConnection();
+				isDBOK = true;
+			}catch (Exception ex) {
+				logger.error("there is problem connecting to DB. please check the DB file", ex);
+				isDBOK = false;
+				SwingUtilities.invokeLater(()->{
+					window.updateHeader("连接数据库文件出错，请检查setting.xml里的<DbFilePath/> ");
+				});
+			}
+		}).start();
 	}
 
 	public void searchAndShow(SearchType searchType, Integer groupId, String keyword) {
@@ -110,38 +129,43 @@ public class AppWindow {
                 case ByKeyWord: {
                     String key = _conditionKeyword.orElse("");
                     searchInfo = String.format("当前查询条件: %s", key.isEmpty() ? "所有" : "<关键字>"+key);
-                    items = personDao.GetPersonByKeyword(_conditionKeyword.orElse(""));
+                    items = personDao.getPersonByKeyword(_conditionKeyword.orElse(""));
                     break;
                 }
                 case ByGroupId: {
                     searchInfo = String.format("当前查询条件: " + String.format("第%d组", _conditionGroupId.get()));
-                    items = personDao.GetGroupMembers(_conditionGroupId.get());
+                    items = personDao.getGroupMembers(_conditionGroupId.get());
                     break;
                 }
                 case ByDuplicateReg: {
                     searchInfo = "当前查询条件: 所有可能重复报名的人";
-                    items = personDao.GetDuplicateRegistration();
+                    items = personDao.getDuplicateRegistration();
                     break;
                 }
                 case ByBeWith: {
                     searchInfo = "当前查询条件: 要求想要一起的人";
-                    items = personDao.GetWannaBeWithList();
+                    items = personDao.getWannaBeWithList();
                     break;
                 }
                 case ByGroupOrder: {
                     searchInfo = "当前查询条件: 按小组顺序显示所有";
-                    items = personDao.GetAllGroupMembers();
+                    items = personDao.getAllGroupMembersOrderByGroupNo();
                     break;
                 }
                 case ByHavingRemark:{
                     searchInfo = "当前查询条件：处理中发现有问题的记录";
-                    items = personDao.GetProblemeticItems();
+                    items = personDao.getProblemeticItems();
                     break;
                 }
+				case ByGroupLeaders:{
+					searchInfo = "当前查询条件：显示所有组长副组长";
+					items = personDao.getGroupLeaders();
+					break;
+				}
 
                 default: {
                     searchInfo = "当前查询条件: 不知道你想搜素什么";
-                    items = personDao.GetPersonByKeyword(_conditionKeyword.orElse(""));
+                    items = personDao.getPersonByKeyword(_conditionKeyword.orElse(""));
                     break;
                 }
             }
@@ -160,9 +184,9 @@ public class AppWindow {
         }).start();
     }
 
-    public void updateTitle(String info) {
+    public void updateHeader(String info) {
         SwingUtilities.invokeLater(() -> {
-            lbl_title_search_info.setText(info);
+            lbl_title_search_info.setText(info+ " ");
         });
     }
 
@@ -173,17 +197,23 @@ public class AppWindow {
         });
     }
 
+    public void refreshWindowTitle() {
+		SwingUtilities.invokeLater(()->{
+			frmGecGroupingSoftware.setTitle("GEC Grouping Software @ Shawn @ " + SettingCenter.getDbFilePath());
+		});
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 * @wbp.parser.entryPoint
 	 */
 	private void initialize() {
 		frmGecGroupingSoftware = new JFrame();
-		frmGecGroupingSoftware.setTitle("GEC Grouping Software @ Shawn");
+
 		frmGecGroupingSoftware.setBounds(100, 100, 1024, 750);
 		frmGecGroupingSoftware.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmGecGroupingSoftware.getContentPane().setLayout(new BorderLayout());
-		
+
 		JPanel panel = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
 		flowLayout.setAlignment(FlowLayout.LEFT);
@@ -195,12 +225,17 @@ public class AppWindow {
 
 			    logger.info("Button clicked : Read the records from file");
 
+			    if (!isDBOK) {
+					readSettingsAndTestDBConnectivity();
+					return;
+				}
+
 			    // clean first
                 gecMainTableModel.removeAll();
 
                 // read data from csv file to database
                 new Thread(() -> {
-                    Processor.instance.ReadRecordsFromCsvFile();
+                    ControlPanel.instance.readCsvFileAndWriteToDB();
                 }).start();
             }
 		});
@@ -212,8 +247,13 @@ public class AppWindow {
 
 			    logger.info("Button clicked : Read the incremental records from file");
 
+				if (!isDBOK) {
+					readSettingsAndTestDBConnectivity();
+					return;
+				}
+
 			    new Thread(()->{
-                    Processor.instance.ReadDeltaRecordsFromCsvFile();
+                    ControlPanel.instance.readDeltaCsvFileAndWriteToDB();
                 }).start();
 			}
 		});
@@ -226,6 +266,8 @@ public class AppWindow {
 			public void actionPerformed(ActionEvent e) {
 
 			    logger.info("Button clicked : (Refresh) Read all the records from DB");
+
+				readSettingsAndTestDBConnectivity();
 
 				// read data from database and fill up the table
                 searchAndShow(SearchType.ByKeyWord,null, null);
@@ -286,8 +328,10 @@ public class AppWindow {
 
 			    logger.info("Button clicked : auto-grouping");
 
+			    gecMainTableModel.cleanGroupColumn();
+
 			    new Thread(()->{
-                    Processor.instance.AutoGrouping();
+                    ControlPanel.instance.autoGroupingAndPersist();
                 }).start();
 			}
 		});
@@ -313,7 +357,7 @@ public class AppWindow {
 
                 logger.info("Button clicked : export result to CSV file");
 
-                Processor.instance.WriteRecordsToCsvFile();
+                ControlPanel.instance.writeGroupedResultToCsvFile();
             }).start();
         });
 		panel_3.add(btnExport);
@@ -369,7 +413,7 @@ public class AppWindow {
                     logger.info("Button clicked : delete the person UID:{}", selectedId);
 
 					new Thread(()->{
-                        ComplexDao dao = new ComplexDao();
+                        IComplexDao dao = new ComplexDao();
                         dao.deletePersonAndGrouping(selectedId);
                     }).start();
 
@@ -422,17 +466,27 @@ public class AppWindow {
 			    GroupListDialog.ShowDialog();
 			}
 		});
-		btn_grpMgr.setBounds(6, 314, 110, 29);
+		btn_grpMgr.setBounds(6, 350, 110, 29);
 		panel_east_buttons.add(btn_grpMgr);
 		
-		JButton btn_searchInOrder = new JButton("按组显示");
+		JButton btn_allTealLeader = new JButton("所有组长");
+		btn_allTealLeader.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logger.info("Button clicked : show all team leaders");
+			    searchAndShow(SearchType.ByGroupLeaders, null, null);
+			}
+		});
+		btn_allTealLeader.setBounds(6, 280, 110, 29);
+		panel_east_buttons.add(btn_allTealLeader);
+		
+		JButton btn_searchInOrder = new JButton("列组显示");
 		btn_searchInOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				logger.info("Button clicked : show all in group order");
 			    searchAndShow(SearchType.ByGroupOrder, null, null);
 			}
 		});
-		btn_searchInOrder.setBounds(6, 280, 110, 29);
+		btn_searchInOrder.setBounds(6, 315, 110, 29);
 		panel_east_buttons.add(btn_searchInOrder);
 		
 		JPanel panel_center = new JPanel();

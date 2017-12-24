@@ -9,10 +9,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import com.shawn.gec.control.SettingCenter;
-import com.shawn.gec.control.Utils;
-import com.shawn.gec.dao.ComplexDao;
-import com.shawn.gec.dao.GroupingDao;
-import com.shawn.gec.dao.PersonDao;
+import com.shawn.gec.dao.*;
 import com.shawn.gec.po.MemGroupingItem;
 import com.shawn.gec.po.Role;
 
@@ -77,11 +74,11 @@ public class PersonInfoDialog extends JDialog {
 
 		new Thread(()->{
 
-			PersonDao dao = new PersonDao();
-			MemGroupingItem item = dao.GetPersonById(_personId);
+			IPersonDao dao = new PersonDao();
+			MemGroupingItem item = dao.getPersonById(_personId);
 			_groupingItem = item;
 
-			ComplexDao complexDao = new ComplexDao();
+			IComplexDao complexDao = new ComplexDao();
 			List<String> lans = complexDao.getAllRegesterLanguages();
 
 			SwingUtilities.invokeLater(()->{
@@ -436,19 +433,19 @@ public class PersonInfoDialog extends JDialog {
 							// write to database
 
 							new Thread(()->{
-								PersonDao pDao = new PersonDao();
-								pDao.InsertOrUpdatePerson(_groupingItem.person);
+								IPersonDao pDao = new PersonDao();
+								pDao.insertOrUpdatePerson(_groupingItem.person);
 
-								GroupingDao gDao = new GroupingDao();
-								gDao.InsertOrUpdate(_groupingItem.grouping);
+								IGroupingDao gDao = new GroupingDao();
+								gDao.insertOrUpdate(_groupingItem.grouping);
 
 								if (_groupingItem.grouping.getIsFixed()==1) {
 									// Lock the group preventing from anto changing
-									gDao.LockGroup(_groupingItem.grouping.getGroup_id(), true);
+									gDao.lockGroup(_groupingItem.grouping.getGroup_id(), true);
 
 									// update the whole group name
-									ComplexDao cDao = new ComplexDao();
-									cDao.UpdateGroupName(_groupingItem.grouping.getLanguage(), _groupingItem.grouping.getGroup_id());
+									IComplexDao cDao = new ComplexDao();
+									cDao.updateGroupName(_groupingItem.grouping.getLanguage(), _groupingItem.grouping.getGroup_id());
 								}
 
 								// refresh the mainBoard
