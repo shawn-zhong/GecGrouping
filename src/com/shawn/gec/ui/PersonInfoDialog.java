@@ -121,7 +121,9 @@ public class PersonInfoDialog extends JDialog {
 						checkBox_manual.setSelected(false);
 					}
 
-					cmb_g_role.setSelectedItem(item.grouping.getGroupedRole().RoleNames.trim());
+					String gRole = item.grouping.getGroupedRole().RoleNames.trim();
+					gRole = gRole.isEmpty() ? "<null>" : gRole;
+					cmb_g_role.setSelectedItem(gRole);
 				}
 				else {
 					text_g_language.setText("");
@@ -426,7 +428,7 @@ public class PersonInfoDialog extends JDialog {
 							}
 
 							if (cmb_g_role.getSelectedItem().toString().compareToIgnoreCase("<null>")== 0)
-								_groupingItem.grouping.setGroupedRole(null);
+								_groupingItem.grouping.setGroupedRole(new Role(""));
 							else
 							  _groupingItem.grouping.setGroupedRole(new Role(cmb_g_role.getSelectedItem().toString()));
 

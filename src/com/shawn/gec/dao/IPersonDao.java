@@ -23,6 +23,7 @@ public interface IPersonDao {
  * 
  * 
  * PRAGMA foreign_keys = 0;
+
 PRAGMA foreign_keys = 0;
 
 CREATE TABLE sqlitestudio_temp_table AS SELECT *
@@ -49,7 +50,8 @@ CREATE TABLE person (
                          NOT NULL,
     roles        TEXT,
     remark       TEXT,
-    be_with      TEXT
+    be_with      TEXT,
+    search_text  TEXT
 );
 
 INSERT INTO person (
@@ -67,7 +69,8 @@ INSERT INTO person (
                        experience,
                        roles,
                        remark,
-                       be_with
+                       be_with,
+                       search_text
                    )
                    SELECT id,
                           is_male,
@@ -83,15 +86,54 @@ INSERT INTO person (
                           experience,
                           roles,
                           remark,
-                          be_with
+                          be_with,
+                          search_text
                      FROM sqlitestudio_temp_table;
 
 DROP TABLE sqlitestudio_temp_table;
 
-PRAGMA foreign_keys = 1;
+
+
+
+
+
+DROP TRIGGER trigger_person_after_update;
+
+CREATE TRIGGER IF NOT EXISTS trigger_person_after_update
+AFTER UPDATE
+ON person
+FOR EACH ROW
+BEGIN
+    UPDATE person SET search_text = 'id='||new.id||' '||'mobile='||new.mobile||' '||'name='||new.english_name||' '||'gender='||new.is_male||' '||
+    'language='||new.language||' '||'be_with='||new.be_with||' '||'experience='||new.experience||' ' where id = new.id;
+END;
 
 
  * 
  * 
  * 
  * */
+
+
+
+
+
+/*
+
+
+
+DROP TRIGGER trigger_person_after_update;
+
+CREATE TRIGGER IF NOT EXISTS trigger_person_after_update
+AFTER UPDATE
+ON person
+FOR EACH ROW
+BEGIN
+    UPDATE person SET search_text = 'id='||new.id||' '||'mobile='||new.mobile||' '||'name='||new.english_name||' '||'gender='||new.is_male||' '||
+    'language='||new.language||' '||'be_with='||new.be_with||' ' where id = new.id;
+END;
+
+
+
+
+ */

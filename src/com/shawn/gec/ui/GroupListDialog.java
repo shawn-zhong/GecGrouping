@@ -92,18 +92,24 @@ public class GroupListDialog extends JDialog {
 
 				tableStat.addMouseListener(new MouseAdapter() {
 					public void mouseClicked(MouseEvent e) {
+						int selectedRowNumber = tableStat.getSelectedRow();
+						if (selectedRowNumber == -1 ) {
+							return;
+						}
+
 						if (e.getClickCount() == 2) {
-
-							int selectedRowNumber = tableStat.getSelectedRow();
-
-							if (selectedRowNumber == -1 ) {
-								return;
-							}
-
 							int groupID = Integer.parseInt(tableStat.getValueAt(selectedRowNumber, 0).toString());
-
 							AppWindow.window.searchAndShow(AppWindow.SearchType.ByGroupId, groupID, null);
 						}
+
+						// update the btn lock display
+						String lockText = tableModel.getValueAt(selectedRowNumber, 5).toString();
+						if (lockText.isEmpty()) {
+							btn_lock.setText("上锁");
+						} else {
+							btn_lock.setText("解锁");
+						}
+						btn_lock.updateUI();
 					}
 				});
 			}
@@ -128,11 +134,11 @@ public class GroupListDialog extends JDialog {
 					int row = tableStat.getSelectedRow();
 					if (row != -1) {
 						int groupId = Integer.parseInt(tableModel.getValueAt(row, 0).toString());
-						String lock = tableModel.getValueAt(row, 5).toString();
+						String lockText = tableModel.getValueAt(row, 5).toString();
 
 						new Thread(()->{
 							IGroupingDao dao = new GroupingDao();
-							if (lock.isEmpty()) {
+							if (lockText.isEmpty()) {
 								dao.lockGroup(groupId, true);
 								tableModel.setValueAt("已上锁", row, 5);
 								btn_lock.setText("解锁");
@@ -141,18 +147,12 @@ public class GroupListDialog extends JDialog {
 								tableModel.setValueAt("", row, 5);
 								btn_lock.setText("上锁");
 							}
-						}).start();
 
-						if (lock.isEmpty()) {
-							tableModel.setValueAt("已上锁", row, 5);
-							btn_lock.setText("解锁");
-						} else {
-							tableModel.setValueAt("", row, 5);
-							btn_lock.setText("上锁");
-						}
+							SwingUtilities.invokeLater(()->{
+								tableStat.updateUI();
+							});
+						}).start();
 					}
-					
-					tableStat.updateUI();
 				}
 			});
 			

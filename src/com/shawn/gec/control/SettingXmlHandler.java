@@ -63,6 +63,8 @@ public class SettingXmlHandler extends DefaultHandler {
                 SettingCenter.setExlOutputPath(value);
             } else if (_currentQName.compareToIgnoreCase("GroupCapacity") == 0) {
                 SettingCenter.setGroupCapacity(Integer.parseInt(value));
+            } else if (_currentQName.compareToIgnoreCase("Charset") == 0 ){
+                SettingCenter.setCharset(value);
             } else if (_currentQName.compareToIgnoreCase("RoleName") == 0) {
                 SettingCenter.addToRoleNameList(value);
             } else if (_currentQName.compareToIgnoreCase("Column") == 0) {

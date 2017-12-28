@@ -337,7 +337,7 @@ public class AppWindow {
 		});
 		panel_3.add(btnAutoGrouping);
 		
-		JButton btn_show_remark_list = new JButton("错误查看");
+		JButton btn_show_remark_list = new JButton("问题查看");
 		btn_show_remark_list.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -375,8 +375,9 @@ public class AppWindow {
 		JPanel panel_east_blank = new JPanel();
 		panel_modify.add(panel_east_blank, BorderLayout.NORTH);
 		
-		JLabel lblNewLabel_1 = new JLabel("                            ");
-		panel_east_blank.add(lblNewLabel_1);
+		JLabel lblNewLabel = new JLabel("使用关键字查询数据");
+		lblNewLabel.setForeground(new Color(238,238,238));
+		panel_east_blank.add(lblNewLabel);
 		
 		JPanel panel_east_buttons = new JPanel();
 		panel_modify.add(panel_east_buttons, BorderLayout.CENTER);
@@ -398,7 +399,7 @@ public class AppWindow {
 				PersonInfoDialog.showDialog(selectedId);
 			}
 		});
-		btnEdit.setBounds(6, 166, 110, 29);
+		btnEdit.setBounds(6, 170, 103, 29);
 		panel_east_buttons.add(btnEdit);
 		
 		JButton btnDelete = new JButton("删除");
@@ -422,7 +423,7 @@ public class AppWindow {
 				}
 			}
 		});
-		btnDelete.setBounds(6, 200, 110, 29);
+		btnDelete.setBounds(6, 204, 103, 29);
 		panel_east_buttons.add(btnDelete);
 		
 		textKeyword = new JTextField();
@@ -438,7 +439,7 @@ public class AppWindow {
             }
         });
 
-		textKeyword.setBounds(6, 45, 110, 26);
+		textKeyword.setBounds(6, 49, 103, 26);
 		panel_east_buttons.add(textKeyword);
 		textKeyword.setColumns(10);
 		
@@ -452,11 +453,11 @@ public class AppWindow {
             logger.info("Button clicked : search key workd {}", key);
 
         });
-		btnKeywordSearch.setBounds(6, 78, 110, 29);
+		btnKeywordSearch.setBounds(6, 82, 103, 29);
 		panel_east_buttons.add(btnKeywordSearch);
 		
 		JLabel label = new JLabel("关键字查询");
-		label.setBounds(19, 17, 73, 16);
+		label.setBounds(19, 21, 73, 16);
 		panel_east_buttons.add(label);
 		
 		JButton btn_grpMgr = new JButton("小组管理");
@@ -466,7 +467,7 @@ public class AppWindow {
 			    GroupListDialog.ShowDialog();
 			}
 		});
-		btn_grpMgr.setBounds(6, 350, 110, 29);
+		btn_grpMgr.setBounds(6, 354, 103, 29);
 		panel_east_buttons.add(btn_grpMgr);
 		
 		JButton btn_allTealLeader = new JButton("所有组长");
@@ -476,7 +477,7 @@ public class AppWindow {
 			    searchAndShow(SearchType.ByGroupLeaders, null, null);
 			}
 		});
-		btn_allTealLeader.setBounds(6, 280, 110, 29);
+		btn_allTealLeader.setBounds(6, 284, 103, 29);
 		panel_east_buttons.add(btn_allTealLeader);
 		
 		JButton btn_searchInOrder = new JButton("列组显示");
@@ -486,7 +487,7 @@ public class AppWindow {
 			    searchAndShow(SearchType.ByGroupOrder, null, null);
 			}
 		});
-		btn_searchInOrder.setBounds(6, 315, 110, 29);
+		btn_searchInOrder.setBounds(6, 319, 103, 29);
 		panel_east_buttons.add(btn_searchInOrder);
 		
 		JPanel panel_center = new JPanel();

@@ -134,7 +134,7 @@ public class ControlPanel {
 	private void readFileAndWriteDB(String _filePath, int _currentMaxPid) {
 
 		try {
-			CsvReader csvReader = new CsvReader(_filePath, ',', Charset.forName("UTF-8"));
+			CsvReader csvReader = new CsvReader(_filePath, ',', Charset.forName(SettingCenter.getCharset()));
 			csvReader.readHeaders(); // skip the first line 
 
 			int counter = 0;
@@ -241,8 +241,12 @@ public class ControlPanel {
 
 			File ofile = new File(SettingCenter.getExlOutputPath());
 			OutputStream out = new FileOutputStream(ofile);
-			out.write(new byte[] { (byte) 0xEF, (byte) 0xBB,(byte) 0xBF });
-			CsvWriter writer = new CsvWriter(out, ',', Charset.forName("UTF-8"));
+
+			if (SettingCenter.getCharset().compareToIgnoreCase("UTF-8") == 0) {
+				out.write(new byte[]{(byte) 0xEF, (byte) 0xBB, (byte) 0xBF});
+			}
+
+			CsvWriter writer = new CsvWriter(out, ',', Charset.forName(SettingCenter.getCharset()));
 
 			//CsvWriter writer = new CsvWriter(SettingCenter.getExlOutputPath(), ',', Charset.forName("UTF-8"));
 

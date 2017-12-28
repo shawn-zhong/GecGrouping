@@ -34,6 +34,8 @@ public class SettingCenter {
     private static String exlDeltaFilePath;
 	private static String dbFilePath;
     private static String exlOutputPath;
+
+    private  static String charset;
 	private static int groupCapacity;
 	private static List<String> roleNameList;
 
@@ -63,6 +65,8 @@ public class SettingCenter {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.error("exception while parsing the setting file", e);
         }
+
+        charset = "UTF-8";
     }
 
 	public static void Clear() {
@@ -122,6 +126,14 @@ public class SettingCenter {
 
     public static void setExlOutputPath(String exlOutputPath) {
         SettingCenter.exlOutputPath = exlOutputPath;
+    }
+
+    public static String getCharset() {
+        return charset;
+    }
+
+    public static void setCharset(String charset) {
+        SettingCenter.charset = charset;
     }
 
     @Override

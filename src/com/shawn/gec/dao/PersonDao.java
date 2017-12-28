@@ -77,8 +77,8 @@ public class PersonDao implements IPersonDao {
 			
 			String sqlSelect = String.format("select * from person left join grouping on person.id = grouping.g_uid where english_name like '%%%s%%' or chinese_name like '%%%s%%' or occupation like '%%%s%%' or mobile like '%%%s%%' " +
                         " or qq like '%%%s%%' or wechat like '%%%s%%' or language like '%%%s%%' or roles like '%%%s%%' or be_with like '%%%s%%' " +
-                        " or g_roledesc like '%%%s%%' or g_groupname like '%%%s%%' ",
-                        keyword,keyword,keyword,keyword,keyword,keyword,keyword,keyword,keyword, keyword, keyword);
+                        " or g_roledesc like '%%%s%%' or g_groupname like '%%%s%%' or g_remark like '%%%s%%' or remark like '%%%s%%' or search_text like '%%%s%%'",
+                        keyword,keyword,keyword,keyword,keyword,keyword,keyword,keyword,keyword, keyword, keyword, keyword, keyword, keyword);
 			logger.debug(sqlSelect);
 			ResultSet rs = statement.executeQuery(sqlSelect);
 			List<MemGroupingItem> items = readResultSet(rs);
